@@ -1,0 +1,468 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E0EE209B1983A57500D930E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0EE209A1983A57500D930E5 /* Foundation.framework */; };
+		E0EE209D1983A57500D930E5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0EE209C1983A57500D930E5 /* CoreGraphics.framework */; };
+		E0EE209F1983A57500D930E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0EE209E1983A57500D930E5 /* UIKit.framework */; };
+		E0EE20A51983A57500D930E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E0EE20A31983A57500D930E5 /* InfoPlist.strings */; };
+		E0EE20A71983A57500D930E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E0EE20A61983A57500D930E5 /* main.m */; };
+		E0EE20AB1983A57500D930E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0EE20AA1983A57500D930E5 /* AppDelegate.m */; };
+		E0EE20AD1983A57500D930E5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0EE20AC1983A57500D930E5 /* Images.xcassets */; };
+		E0EE20B41983A57500D930E5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0EE20B31983A57500D930E5 /* XCTest.framework */; };
+		E0EE20B51983A57500D930E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0EE209A1983A57500D930E5 /* Foundation.framework */; };
+		E0EE20B61983A57500D930E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0EE209E1983A57500D930E5 /* UIKit.framework */; };
+		E0EE20BE1983A57500D930E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E0EE20BC1983A57500D930E5 /* InfoPlist.strings */; };
+		E0EE20C01983A57500D930E5 /* RichPhotoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0EE20BF1983A57500D930E5 /* RichPhotoTests.m */; };
+		E0EE20CB1983A5B100D930E5 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0EE20CA1983A5B100D930E5 /* RootViewController.m */; };
+		E0EE20CE1983A5ED00D930E5 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E0EE20CC1983A5ED00D930E5 /* LICENSE */; };
+		E0EE20CF1983A5ED00D930E5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E0EE20CD1983A5ED00D930E5 /* README.md */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E0EE20B71983A57500D930E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E0EE208F1983A57500D930E5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E0EE20961983A57500D930E5;
+			remoteInfo = RichPhoto;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E0EE20971983A57500D930E5 /* RichPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RichPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0EE209A1983A57500D930E5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E0EE209C1983A57500D930E5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E0EE209E1983A57500D930E5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E0EE20A21983A57500D930E5 /* RichPhoto-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RichPhoto-Info.plist"; sourceTree = "<group>"; };
+		E0EE20A41983A57500D930E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E0EE20A61983A57500D930E5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E0EE20A81983A57500D930E5 /* RichPhoto-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RichPhoto-Prefix.pch"; sourceTree = "<group>"; };
+		E0EE20A91983A57500D930E5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E0EE20AA1983A57500D930E5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E0EE20AC1983A57500D930E5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E0EE20B21983A57500D930E5 /* RichPhotoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RichPhotoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0EE20B31983A57500D930E5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		E0EE20BB1983A57500D930E5 /* RichPhotoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RichPhotoTests-Info.plist"; sourceTree = "<group>"; };
+		E0EE20BD1983A57500D930E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E0EE20BF1983A57500D930E5 /* RichPhotoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RichPhotoTests.m; sourceTree = "<group>"; };
+		E0EE20C91983A5B100D930E5 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		E0EE20CA1983A5B100D930E5 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		E0EE20CC1983A5ED00D930E5 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
+		E0EE20CD1983A5ED00D930E5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E0EE20941983A57500D930E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0EE209D1983A57500D930E5 /* CoreGraphics.framework in Frameworks */,
+				E0EE209F1983A57500D930E5 /* UIKit.framework in Frameworks */,
+				E0EE209B1983A57500D930E5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0EE20AF1983A57500D930E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0EE20B41983A57500D930E5 /* XCTest.framework in Frameworks */,
+				E0EE20B61983A57500D930E5 /* UIKit.framework in Frameworks */,
+				E0EE20B51983A57500D930E5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E0EE208E1983A57500D930E5 = {
+			isa = PBXGroup;
+			children = (
+				E0EE20A01983A57500D930E5 /* RichPhoto */,
+				E0EE20B91983A57500D930E5 /* RichPhotoTests */,
+				E0EE20991983A57500D930E5 /* Frameworks */,
+				E0EE20981983A57500D930E5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E0EE20981983A57500D930E5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E0EE20971983A57500D930E5 /* RichPhoto.app */,
+				E0EE20B21983A57500D930E5 /* RichPhotoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E0EE20991983A57500D930E5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E0EE209A1983A57500D930E5 /* Foundation.framework */,
+				E0EE209C1983A57500D930E5 /* CoreGraphics.framework */,
+				E0EE209E1983A57500D930E5 /* UIKit.framework */,
+				E0EE20B31983A57500D930E5 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E0EE20A01983A57500D930E5 /* RichPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				E0EE20A91983A57500D930E5 /* AppDelegate.h */,
+				E0EE20AA1983A57500D930E5 /* AppDelegate.m */,
+				E0EE20C91983A5B100D930E5 /* RootViewController.h */,
+				E0EE20CA1983A5B100D930E5 /* RootViewController.m */,
+				E0EE20AC1983A57500D930E5 /* Images.xcassets */,
+				E0EE20A11983A57500D930E5 /* Supporting Files */,
+			);
+			path = RichPhoto;
+			sourceTree = "<group>";
+		};
+		E0EE20A11983A57500D930E5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E0EE20CC1983A5ED00D930E5 /* LICENSE */,
+				E0EE20CD1983A5ED00D930E5 /* README.md */,
+				E0EE20A21983A57500D930E5 /* RichPhoto-Info.plist */,
+				E0EE20A31983A57500D930E5 /* InfoPlist.strings */,
+				E0EE20A61983A57500D930E5 /* main.m */,
+				E0EE20A81983A57500D930E5 /* RichPhoto-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E0EE20B91983A57500D930E5 /* RichPhotoTests */ = {
+			isa = PBXGroup;
+			children = (
+				E0EE20BF1983A57500D930E5 /* RichPhotoTests.m */,
+				E0EE20BA1983A57500D930E5 /* Supporting Files */,
+			);
+			path = RichPhotoTests;
+			sourceTree = "<group>";
+		};
+		E0EE20BA1983A57500D930E5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E0EE20BB1983A57500D930E5 /* RichPhotoTests-Info.plist */,
+				E0EE20BC1983A57500D930E5 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E0EE20961983A57500D930E5 /* RichPhoto */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E0EE20C31983A57500D930E5 /* Build configuration list for PBXNativeTarget "RichPhoto" */;
+			buildPhases = (
+				E0EE20931983A57500D930E5 /* Sources */,
+				E0EE20941983A57500D930E5 /* Frameworks */,
+				E0EE20951983A57500D930E5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RichPhoto;
+			productName = RichPhoto;
+			productReference = E0EE20971983A57500D930E5 /* RichPhoto.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E0EE20B11983A57500D930E5 /* RichPhotoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E0EE20C61983A57500D930E5 /* Build configuration list for PBXNativeTarget "RichPhotoTests" */;
+			buildPhases = (
+				E0EE20AE1983A57500D930E5 /* Sources */,
+				E0EE20AF1983A57500D930E5 /* Frameworks */,
+				E0EE20B01983A57500D930E5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E0EE20B81983A57500D930E5 /* PBXTargetDependency */,
+			);
+			name = RichPhotoTests;
+			productName = RichPhotoTests;
+			productReference = E0EE20B21983A57500D930E5 /* RichPhotoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E0EE208F1983A57500D930E5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = smart;
+				TargetAttributes = {
+					E0EE20B11983A57500D930E5 = {
+						TestTargetID = E0EE20961983A57500D930E5;
+					};
+				};
+			};
+			buildConfigurationList = E0EE20921983A57500D930E5 /* Build configuration list for PBXProject "RichPhoto" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E0EE208E1983A57500D930E5;
+			productRefGroup = E0EE20981983A57500D930E5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E0EE20961983A57500D930E5 /* RichPhoto */,
+				E0EE20B11983A57500D930E5 /* RichPhotoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E0EE20951983A57500D930E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0EE20CE1983A5ED00D930E5 /* LICENSE in Resources */,
+				E0EE20A51983A57500D930E5 /* InfoPlist.strings in Resources */,
+				E0EE20CF1983A5ED00D930E5 /* README.md in Resources */,
+				E0EE20AD1983A57500D930E5 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0EE20B01983A57500D930E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0EE20BE1983A57500D930E5 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E0EE20931983A57500D930E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0EE20AB1983A57500D930E5 /* AppDelegate.m in Sources */,
+				E0EE20A71983A57500D930E5 /* main.m in Sources */,
+				E0EE20CB1983A5B100D930E5 /* RootViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0EE20AE1983A57500D930E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0EE20C01983A57500D930E5 /* RichPhotoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E0EE20B81983A57500D930E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E0EE20961983A57500D930E5 /* RichPhoto */;
+			targetProxy = E0EE20B71983A57500D930E5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E0EE20A31983A57500D930E5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0EE20A41983A57500D930E5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E0EE20BC1983A57500D930E5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0EE20BD1983A57500D930E5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E0EE20C11983A57500D930E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E0EE20C21983A57500D930E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E0EE20C41983A57500D930E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RichPhoto/RichPhoto-Prefix.pch";
+				INFOPLIST_FILE = "RichPhoto/RichPhoto-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E0EE20C51983A57500D930E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RichPhoto/RichPhoto-Prefix.pch";
+				INFOPLIST_FILE = "RichPhoto/RichPhoto-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		E0EE20C71983A57500D930E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RichPhoto.app/RichPhoto";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RichPhoto/RichPhoto-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RichPhotoTests/RichPhotoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		E0EE20C81983A57500D930E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RichPhoto.app/RichPhoto";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RichPhoto/RichPhoto-Prefix.pch";
+				INFOPLIST_FILE = "RichPhotoTests/RichPhotoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E0EE20921983A57500D930E5 /* Build configuration list for PBXProject "RichPhoto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0EE20C11983A57500D930E5 /* Debug */,
+				E0EE20C21983A57500D930E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E0EE20C31983A57500D930E5 /* Build configuration list for PBXNativeTarget "RichPhoto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0EE20C41983A57500D930E5 /* Debug */,
+				E0EE20C51983A57500D930E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E0EE20C61983A57500D930E5 /* Build configuration list for PBXNativeTarget "RichPhotoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0EE20C71983A57500D930E5 /* Debug */,
+				E0EE20C81983A57500D930E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E0EE208F1983A57500D930E5 /* Project object */;
+}
