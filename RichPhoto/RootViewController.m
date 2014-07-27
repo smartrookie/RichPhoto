@@ -7,43 +7,70 @@
 //
 
 #import "RootViewController.h"
+#import "LoginViewController.h"
 
-@interface RootViewController ()
+@interface RootViewController ()<UITableViewDelegate,UITableViewDataSource>
+
+@property (strong, nonatomic) UITableView *tableview;
+@property (strong, nonatomic) NSArray     *dataArr;
 
 @end
 
 @implementation RootViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.title = @"测试导航";
+    
+    self.tableview = ({
+        UITableView *tableview = [[UITableView alloc] init];
+        tableview.delegate   = self;
+        tableview.dataSource = self;
+        tableview;
+    });
+    [_tableview setFrame:self.view.frame];
+    [self.view addSubview:_tableview];
+    
+    self.dataArr = @[@"登录"];
 }
 
-- (void)didReceiveMemoryWarning
+#pragma mark - UITableViewDelegate
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    return 1;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    return [_dataArr count];
 }
-*/
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *identifier = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+    }
+    cell.textLabel.text = _dataArr[indexPath.row];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    switch (indexPath.row) {
+        case 0:{
+            LoginViewController *loginvctrl = [[LoginViewController alloc] init];
+            [self.navigationController pushViewController:loginvctrl animated:YES];
+        }
+            break;
+            
+        default:
+            break;
+    }
+}
 
 @end
