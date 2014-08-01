@@ -19,6 +19,8 @@
 @property (strong, nonatomic) UIImageView *iv_avatar;
 @property (strong, nonatomic) UIImageView *iv_header;
 @property (strong, nonatomic) UIImageView *iv_footer;
+@property (strong, nonatomic) UIButton    *btn_newUser;
+@property (strong, nonatomic) UIButton    *btn_forget;
 
 @end
 
@@ -114,6 +116,20 @@
         footer;
     });
     [_iv_footer addSubview:_tf_password];
+    
+    self.btn_newUser = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_btn_newUser setFrame:CGRectMake(235, CGRectGetHeight(self.view.frame) - 45, 70, 33)];
+    [_btn_newUser setTitle:@"新用户" forState:UIControlStateNormal];
+    [_btn_newUser setTitleColor:[UIColor colorWithRed:63.0f/255.0 green:107.0f/255.0 blue:252.0f/255 alpha:1.0f] forState:UIControlStateNormal];
+    [_btn_newUser.layer setCornerRadius:3.0f];
+    [_btn_newUser.layer setBorderWidth:1.0f];
+    [_btn_newUser.layer setBorderColor:[[UIColor colorWithRed:63.0f/255.0 green:107.0f/255.0 blue:252.0f/255 alpha:1.0f] CGColor]];
+    [_btn_newUser.titleLabel setFont:[UIFont systemFontOfSize:15]];
+    [_btn_newUser setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    [_btn_newUser setBackgroundImage:[UIImage imageNamed:@"login_btn_blue_nor"] forState:UIControlStateHighlighted];
+    [_btn_newUser setBackgroundImage:nil forState:UIControlStateNormal];
+    
+    [self.view addSubview:_btn_newUser];
 }
 
 #pragma mark- UITableViewDelegate
