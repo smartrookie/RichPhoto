@@ -183,7 +183,7 @@
     static NSString *identifier = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[LoginAccountsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
     return cell;
@@ -222,3 +222,129 @@
 }
 
 @end
+
+/*============================================================================*/
+#pragma mark -
+#pragma mark LoginAccountsCell
+/*============================================================================*/
+
+@interface LoginAccountsCell()<UITableViewDelegate,UITableViewDataSource>
+
+@property (strong, nonatomic) UITableView *tableview;
+@property (strong, nonatomic) NSArray     *accountArr;
+
+@end
+
+@implementation LoginAccountsCell
+
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    
+    self.tableview = ({
+        UITableView *tableview = [[UITableView alloc] init];
+        [tableview setTransform:CGAffineTransformMakeRotation(-M_PI_2)];
+        [tableview setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+        [tableview setFrame:CGRectMake(0, 0, 320, 100)];
+        [tableview setDelegate:self];
+        [tableview setDataSource:self];
+        tableview;
+    });
+    [self.contentView addSubview:_tableview];
+    
+    _accountArr = @[@"1"];
+    
+    return self;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [_accountArr count];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([_accountArr count] == 1) {
+        return 320;
+    } else if ([_accountArr count] == 2) {
+        return 160;
+    } else {
+        return 107;
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *identifier = @"cell";
+    AccountCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (!cell) {
+        cell = [[AccountCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    
+    if ([_accountArr count] == 1) {
+        cell.cellType = AccountCellType_One;
+    } else if ([_accountArr count] == 2) {
+        cell.cellType = AccountCellType_Two;
+    } else {
+        cell.cellType = AccountCellType_More;
+    }
+    
+    return cell;
+}
+
+@end
+
+/*============================================================================*/
+#pragma mark -
+#pragma mark AccountCell
+/*============================================================================*/
+
+@interface AccountCell()
+
+@property (strong, nonatomic) UIImageView       *iv_avatar;
+
+@end
+
+@implementation AccountCell
+
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    [self setSelectionStyle:UITableViewCellSelectionStyleNone];
+    
+    self.iv_avatar = [[UIImageView alloc] init];
+    [self.iv_avatar setTransform:CGAffineTransformMakeRotation(M_PI_2)];
+    [_iv_avatar setFrame:CGRectMake(0, 0, 60, 60)];
+    [_iv_avatar setBackgroundColor:[UIColor whiteColor]];
+    [_iv_avatar.layer setBorderWidth:2];
+    [_iv_avatar.layer setBorderColor:[[UIColor blueColor] CGColor]];
+    [_iv_avatar.layer setCornerRadius:4];
+    [_iv_avatar setCenter:self.contentView.center];
+    [self.contentView addSubview:_iv_avatar];
+    
+    return self;
+}
+
+- (void)setCellType:(AccountCellType)cellType
+{
+    _cellType = cellType;
+    switch (cellType) {
+        case AccountCellType_One:{
+            [_iv_avatar setCenter:CGPointMake(50, 160)];
+        }
+            break;
+        case AccountCellType_Two:{
+            [_iv_avatar setCenter:CGPointMake(50, 80)];
+        }
+            break;
+        case AccountCellType_More:{
+            [_iv_avatar setCenter:CGPointMake(50, 53.6f)];
+        }
+            break;
+        default:
+            break;
+    }
+}
+
+@end
+
