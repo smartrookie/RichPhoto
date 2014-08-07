@@ -77,14 +77,17 @@
         UITextField *account = [[UITextField alloc] init];
         [account setFrame:CGRectMake(44, 2, 320-88, 40)];
         [account setTextAlignment:NSTextAlignmentCenter];
+        [account setClearButtonMode:UITextFieldViewModeWhileEditing];
         [account setPlaceholder:@"账号/邮箱/手机号"];
         account;
     });
     
     self.tf_password = ({
         UITextField *password = [[UITextField alloc] init];
-        [password setFrame:CGRectMake(44, 2, 320-88, 40)];
+        [password setFrame:CGRectMake(10, 2, 320-20, 40)];
+        [password setSecureTextEntry:YES];
         [password setTextAlignment:NSTextAlignmentCenter];
+        [password setClearButtonMode:UITextFieldViewModeWhileEditing];
         [password setPlaceholder:@"密码"];
         password;
     });
@@ -216,6 +219,11 @@
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self resignKeyboard];
+}
+
+- (void)resignKeyboard
 {
     [_tf_account resignFirstResponder];
     [_tf_password resignFirstResponder];
