@@ -10,17 +10,19 @@
 
 @interface LoginViewController ()<UITableViewDelegate,UITableViewDataSource> {
     BOOL    hasNaviBar;
+    BOOL    isShowExt;
 }
 
-@property (strong, nonatomic) UITableView *tableview;
-@property (strong, nonatomic) UITextField *tf_account;
-@property (strong, nonatomic) UITextField *tf_password;
-@property (strong, nonatomic) UIButton    *btn_login;
-@property (strong, nonatomic) UIImageView *iv_avatar;
-@property (strong, nonatomic) UIImageView *iv_header;
-@property (strong, nonatomic) UIImageView *iv_footer;
-@property (strong, nonatomic) UIButton    *btn_newUser;
-@property (strong, nonatomic) UIButton    *btn_forget;
+@property (strong, nonatomic) UITableView   *tableview;
+@property (strong, nonatomic) UITextField   *tf_account;
+@property (strong, nonatomic) UITextField   *tf_password;
+@property (strong, nonatomic) UIImageView   *iv_avatar;
+@property (strong, nonatomic) UIImageView   *iv_header;
+@property (strong, nonatomic) UIImageView   *iv_footer;
+@property (strong, nonatomic) UIButton      *btn_login;
+@property (strong, nonatomic) UIButton      *btn_newUser;
+@property (strong, nonatomic) UIButton      *btn_forget;
+@property (strong, nonatomic) NSArray       *countArr;
 
 @end
 
@@ -55,6 +57,7 @@
         [tableview setDelegate:self];
         [tableview setDataSource:self];
         [tableview setBackgroundColor:[UIColor clearColor]];
+        [tableview setScrollEnabled:NO];
         tableview;
     });
     [_tableview setFrame:CGRectMake(0, CGRectGetMaxY(_iv_avatar.frame)+20, 320, 88)];
@@ -65,7 +68,7 @@
                           forState:UIControlStateNormal];
     [_btn_login setBackgroundImage:[UIImage imageNamed:@"login_btn_blue_press" resizableDefault:YES]
                           forState:UIControlStateHighlighted];
-    [_btn_login setFrame:CGRectMake(10, CGRectGetMaxY(_tableview.frame)+20, 300, 44)];
+    [_btn_login setFrame:CGRectMake(10, CGRectGetMaxY(_tableview.frame)+15, 300, 44)];
     [_btn_login addTarget:self action:@selector(loginAction:) forControlEvents:UIControlEventTouchUpInside];
     [_btn_login setTitle:@"登录" forState:UIControlStateNormal];
     [self.view addSubview:_btn_login];
@@ -98,6 +101,11 @@
         [more addTarget:self action:@selector(moreAction:) forControlEvents:UIControlEventTouchUpInside];
         [header addSubview:more];
         
+        UIImageView *line = [[UIImageView alloc] init];
+        [line setFrame:CGRectMake(0, 43, 320, 2)];
+        [line setImage:[UIImage imageNamed:@"line"]];
+        [header addSubview:line];
+        
         header;
     });
     [_iv_header addSubview:_tf_account];
@@ -109,7 +117,7 @@
         [footer setUserInteractionEnabled:YES];
         
         UIImageView *line = [[UIImageView alloc] init];
-        [line setFrame:CGRectMake(0, 0, 320, 2)];
+        [line setFrame:CGRectMake(0, -1, 320, 2)];
         [line setImage:[UIImage imageNamed:@"line"]];
         [footer addSubview:line];
         
@@ -130,6 +138,8 @@
     [_btn_newUser setBackgroundImage:nil forState:UIControlStateNormal];
     
     [self.view addSubview:_btn_newUser];
+    
+    _countArr = @[@"Lucy",@"Lilei",@"sam",@"Hanmeimei"];
 }
 
 #pragma mark- UITableViewDelegate
@@ -140,7 +150,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
@@ -163,12 +173,18 @@
     return _iv_footer;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *identifier = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
     return cell;
 }
@@ -183,6 +199,20 @@
 - (void)moreAction:(UIButton *)sender
 {
     NSLog(@"more button pressed");
+    isShowExt = !isShowExt;
+    if (isShowExt && [_countArr count] > 0) {
+        [UIView animateWithDuration:0.3f animations:^{
+            [_tableview setFrame:CGRectMake(0, CGRectGetMaxY(_iv_avatar.frame)+20, 320, 88 + 100)];
+            [_btn_login setFrame:CGRectMake(10, CGRectGetMaxY(_tableview.frame)+15, 300, 44)];
+            [sender setTransform:CGAffineTransformMakeRotation(M_PI)];
+        }];
+    } else {
+        [UIView animateWithDuration:0.3f animations:^{
+            [_tableview setFrame:CGRectMake(0, CGRectGetMaxY(_iv_avatar.frame)+20, 320, 88)];
+            [_btn_login setFrame:CGRectMake(10, CGRectGetMaxY(_tableview.frame)+15, 300, 44)];
+            [sender setTransform:CGAffineTransformMakeRotation(0)];
+        }];
+    }
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
