@@ -8,7 +8,7 @@
 
 #import "LoginViewController.h"
 
-@interface LoginViewController ()<UITableViewDelegate,UITableViewDataSource> {
+@interface LoginViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate> {
     BOOL    hasNaviBar;
     BOOL    isShowExt;
 }
@@ -19,6 +19,7 @@
 @property (strong, nonatomic) UIImageView   *iv_avatar;
 @property (strong, nonatomic) UIImageView   *iv_header;
 @property (strong, nonatomic) UIImageView   *iv_footer;
+@property (strong, nonatomic) UIButton      *btn_more;
 @property (strong, nonatomic) UIButton      *btn_login;
 @property (strong, nonatomic) UIButton      *btn_newUser;
 @property (strong, nonatomic) UIButton      *btn_forget;
@@ -60,7 +61,7 @@
         [tableview setScrollEnabled:NO];
         tableview;
     });
-    [_tableview setFrame:CGRectMake(0, CGRectGetMaxY(_iv_avatar.frame)+20, 320, 88)];
+    [_tableview setFrame:CGRectMake(0, CGRectGetMaxY(_iv_avatar.frame)+250, 320, 88)];
     [self.view addSubview:_tableview];
     
     self.btn_login = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -79,6 +80,7 @@
         [account setTextAlignment:NSTextAlignmentCenter];
         [account setClearButtonMode:UITextFieldViewModeWhileEditing];
         [account setPlaceholder:@"账号/邮箱/手机号"];
+        [account setDelegate:self];
         account;
     });
     
@@ -89,7 +91,16 @@
         [password setTextAlignment:NSTextAlignmentCenter];
         [password setClearButtonMode:UITextFieldViewModeWhileEditing];
         [password setPlaceholder:@"密码"];
+        [password setDelegate:self];
         password;
+    });
+    
+    self.btn_more = ({
+        UIButton *more = [UIButton buttonWithType:UIButtonTypeCustom];
+        [more setFrame:CGRectMake(320-44, 0, 44, 44)];
+        [more setImage:[UIImage imageNamed:@"login_textfield_more"] forState:UIControlStateNormal];
+        [more addTarget:self action:@selector(moreAction:) forControlEvents:UIControlEventTouchUpInside];
+        more;
     });
     
     self.iv_header = ({
@@ -97,12 +108,7 @@
         [header setFrame:CGRectMake(0, 0, 320, 44)];
         [header setBackgroundColor:[UIColor whiteColor]];
         [header setUserInteractionEnabled:YES];
-        
-        UIButton *more = [UIButton buttonWithType:UIButtonTypeCustom];
-        [more setFrame:CGRectMake(320-44, 0, 44, 44)];
-        [more setImage:[UIImage imageNamed:@"login_textfield_more"] forState:UIControlStateNormal];
-        [more addTarget:self action:@selector(moreAction:) forControlEvents:UIControlEventTouchUpInside];
-        [header addSubview:more];
+        [header addSubview:_btn_more];
         
         UIImageView *line = [[UIImageView alloc] init];
         [line setFrame:CGRectMake(0, 43, 320, 2)];
@@ -143,6 +149,18 @@
     [self.view addSubview:_btn_newUser];
     
     _countArr = @[@"Lucy",@"Lilei",@"sam",@"Hanmeimei"];
+    isShowExt = NO;
+    
+    [_tableview setAlpha:0];
+    [_btn_login setAlpha:0];
+    [UIView animateWithDuration:0.4f delay:0.1 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        [_tableview setFrame:CGRectMake(0, CGRectGetMaxY(_iv_avatar.frame)+5, 320, 88)];
+        [_btn_login setFrame:CGRectMake(10, CGRectGetMaxY(_tableview.frame)+15, 300, 44)];
+        [_tableview setAlpha:1];
+        [_btn_login setAlpha:1];
+    } completion:^(BOOL finished) {
+        ;
+    }];
 }
 
 #pragma mark- UITableViewDelegate
@@ -202,25 +220,54 @@
 - (void)moreAction:(UIButton *)sender
 {
     NSLog(@"more button pressed");
-    isShowExt = !isShowExt;
-    if (isShowExt && [_countArr count] > 0) {
-        [UIView animateWithDuration:0.3f animations:^{
-            [_tableview setFrame:CGRectMake(0, CGRectGetMaxY(_iv_avatar.frame)+20, 320, 88 + 100)];
-            [_btn_login setFrame:CGRectMake(10, CGRectGetMaxY(_tableview.frame)+15, 300, 44)];
-            [sender setTransform:CGAffineTransformMakeRotation(M_PI)];
-        }];
+    if (!isShowExt && [_countArr count] > 0) {
+        [self openAnimation];
     } else {
-        [UIView animateWithDuration:0.3f animations:^{
-            [_tableview setFrame:CGRectMake(0, CGRectGetMaxY(_iv_avatar.frame)+20, 320, 88)];
-            [_btn_login setFrame:CGRectMake(10, CGRectGetMaxY(_tableview.frame)+15, 300, 44)];
-            [sender setTransform:CGAffineTransformMakeRotation(0)];
-        }];
+        [self closeAnimation];
     }
+}
+
+- (void)openAnimation
+{
+    if (!isShowExt && [_countArr count] > 0) {
+        [UIView animateWithDuration:0.3f animations:^{
+            [_tableview setFrame:CGRectMake(0, CGRectGetMaxY(_iv_avatar.frame)+5, 320, 88 + 100)];
+            [_btn_login setFrame:CGRectMake(10, CGRectGetMaxY(_tableview.frame)+15, 300, 44)];
+            [_btn_more setTransform:CGAffineTransformMakeRotation(M_PI)];
+        }];
+        isShowExt = YES;
+        [self.tf_account setTextColor:[UIColor grayColor]];
+        [self.tf_password setTextColor:[UIColor grayColor]];
+    }
+    [self resignKeyboard];
+}
+
+- (void)closeAnimation
+{
+    if (isShowExt || [_countArr count] == 0) {
+        [UIView animateWithDuration:0.3f animations:^{
+            [_tableview setFrame:CGRectMake(0, CGRectGetMaxY(_iv_avatar.frame)+5, 320, 88)];
+            [_btn_login setFrame:CGRectMake(10, CGRectGetMaxY(_tableview.frame)+15, 300, 44)];
+            [_btn_more setTransform:CGAffineTransformMakeRotation(0)];
+        }];
+        isShowExt = NO;
+        [self.tf_account setTextColor:[UIColor blackColor]];
+        [self.tf_password setTextColor:[UIColor blackColor]];
+    }
+}
+
+#pragma mark -
+#pragma mark UITextFieldDelegate
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [self closeAnimation];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self resignKeyboard];
+    [self closeAnimation];
 }
 
 - (void)resignKeyboard
@@ -231,10 +278,10 @@
 
 @end
 
-/*============================================================================*/
+/*================================================================================================*/
 #pragma mark -
 #pragma mark LoginAccountsCell
-/*============================================================================*/
+/*================================================================================================*/
 
 @interface LoginAccountsCell()<UITableViewDelegate,UITableViewDataSource>
 
@@ -253,6 +300,7 @@
         UITableView *tableview = [[UITableView alloc] init];
         [tableview setTransform:CGAffineTransformMakeRotation(-M_PI_2)];
         [tableview setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+        [tableview setShowsVerticalScrollIndicator:NO];
         [tableview setFrame:CGRectMake(0, 0, 320, 100)];
         [tableview setDelegate:self];
         [tableview setDataSource:self];
@@ -260,7 +308,7 @@
     });
     [self.contentView addSubview:_tableview];
     
-    _accountArr = @[@"1"];
+    _accountArr = @[@"1",@"1",@"1",@"1",@"1"];
     
     return self;
 }
@@ -302,10 +350,10 @@
 
 @end
 
-/*============================================================================*/
+/*================================================================================================*/
 #pragma mark -
 #pragma mark AccountCell
-/*============================================================================*/
+/*================================================================================================*/
 
 @interface AccountCell()
 

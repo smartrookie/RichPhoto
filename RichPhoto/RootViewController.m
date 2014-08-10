@@ -32,7 +32,7 @@
     [_tableview setFrame:self.view.frame];
     [self.view addSubview:_tableview];
     
-    self.dataArr = @[@"登录"];
+    self.dataArr = @[@"高仿QQ登录"];
 }
 
 #pragma mark - UITableViewDelegate
@@ -64,7 +64,7 @@
     switch (indexPath.row) {
         case 0:{
             LoginViewController *loginvctrl = [[LoginViewController alloc] init];
-            [self.navigationController pushViewController:loginvctrl animated:YES];
+            [self.navigationController pushViewController:loginvctrl animated:NO];
         }
             break;
             
