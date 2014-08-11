@@ -229,6 +229,7 @@
 
 - (void)openAnimation
 {
+    [self resignKeyboard];
     if (!isShowExt && [_countArr count] > 0) {
         [UIView animateWithDuration:0.3f animations:^{
             [_tableview setFrame:CGRectMake(0, CGRectGetMaxY(_iv_avatar.frame)+5, 320, 88 + 100)];
@@ -239,7 +240,6 @@
         [self.tf_account setTextColor:[UIColor grayColor]];
         [self.tf_password setTextColor:[UIColor grayColor]];
     }
-    [self resignKeyboard];
 }
 
 - (void)closeAnimation
