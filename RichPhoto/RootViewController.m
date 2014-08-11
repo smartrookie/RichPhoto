@@ -32,7 +32,7 @@
     [_tableview setFrame:self.view.frame];
     [self.view addSubview:_tableview];
     
-    self.dataArr = @[@"高仿QQ登录"];
+    self.dataArr = @[@"高仿登录"];
 }
 
 #pragma mark - UITableViewDelegate
