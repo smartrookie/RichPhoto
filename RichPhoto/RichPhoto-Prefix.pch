@@ -15,4 +15,15 @@
     #import <Foundation/Foundation.h>
     #import "BootViewController.h"
     #import "UIImage+ResizableImage.h"
+
+
+/****       EReader       ******/
+#define OPEN @"open"
+#define offSet_x 10
+#define offSet_y 30
+#define FONT_SIZE @"FONT_SIZE"
+/*******************************/
+
+
+
 #endif

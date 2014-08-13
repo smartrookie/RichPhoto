@@ -8,6 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		529FC9C9199B5E28003B72EF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 529FC9CB199B5E28003B72EF /* Localizable.strings */; };
+		529FC9E7199B6CCC003B72EF /* E_CommonManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 529FC9D0199B6CCC003B72EF /* E_CommonManager.m */; };
+		529FC9E8199B6CCC003B72EF /* E_EveryChapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 529FC9D2199B6CCC003B72EF /* E_EveryChapter.m */; };
+		529FC9E9199B6CCC003B72EF /* E_Paging.mm in Sources */ = {isa = PBXBuildFile; fileRef = 529FC9D4199B6CCC003B72EF /* E_Paging.mm */; };
+		529FC9EA199B6CCC003B72EF /* E_ReaderDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 529FC9D6199B6CCC003B72EF /* E_ReaderDataSource.m */; };
+		529FC9EB199B6CCC003B72EF /* Chapter1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 529FC9D8199B6CCC003B72EF /* Chapter1.txt */; };
+		529FC9EC199B6CCC003B72EF /* Chapter2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 529FC9D9199B6CCC003B72EF /* Chapter2.txt */; };
+		529FC9ED199B6CCC003B72EF /* Chapter3.txt in Resources */ = {isa = PBXBuildFile; fileRef = 529FC9DA199B6CCC003B72EF /* Chapter3.txt */; };
+		529FC9EE199B6CCC003B72EF /* Chapter4.txt in Resources */ = {isa = PBXBuildFile; fileRef = 529FC9DB199B6CCC003B72EF /* Chapter4.txt */; };
+		529FC9EF199B6CCC003B72EF /* Chapter5.txt in Resources */ = {isa = PBXBuildFile; fileRef = 529FC9DC199B6CCC003B72EF /* Chapter5.txt */; };
+		529FC9F0199B6CCC003B72EF /* Chapter6.txt in Resources */ = {isa = PBXBuildFile; fileRef = 529FC9DD199B6CCC003B72EF /* Chapter6.txt */; };
+		529FC9F1199B6CCC003B72EF /* Chapter7.txt in Resources */ = {isa = PBXBuildFile; fileRef = 529FC9DE199B6CCC003B72EF /* Chapter7.txt */; };
+		529FC9F2199B6CCC003B72EF /* E_ReaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 529FC9E1199B6CCC003B72EF /* E_ReaderView.m */; };
+		529FC9F3199B6CCC003B72EF /* E_ReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529FC9E4199B6CCC003B72EF /* E_ReaderViewController.m */; };
+		529FC9F4199B6CCC003B72EF /* E_ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529FC9E6199B6CCC003B72EF /* E_ScrollViewController.m */; };
 		B13200E5E1C346FD864E20AF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DCD2B9222F14BB2BD7BF086 /* libPods.a */; };
 		E080CC6A1984EA5800DD8CEE /* login_btn_blue_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E080CC681984EA5800DD8CEE /* login_btn_blue_nor@2x.png */; };
 		E080CC6B1984EA5800DD8CEE /* login_btn_blue_press@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E080CC691984EA5800DD8CEE /* login_btn_blue_press@2x.png */; };
@@ -50,6 +64,27 @@
 		529FC9B5199B38FC003B72EF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		529FC9CA199B5E28003B72EF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		529FC9CC199B5E2E003B72EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		529FC9CF199B6CCC003B72EF /* E_CommonManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = E_CommonManager.h; sourceTree = "<group>"; };
+		529FC9D0199B6CCC003B72EF /* E_CommonManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = E_CommonManager.m; sourceTree = "<group>"; };
+		529FC9D1199B6CCC003B72EF /* E_EveryChapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = E_EveryChapter.h; sourceTree = "<group>"; };
+		529FC9D2199B6CCC003B72EF /* E_EveryChapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = E_EveryChapter.m; sourceTree = "<group>"; };
+		529FC9D3199B6CCC003B72EF /* E_Paging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = E_Paging.h; sourceTree = "<group>"; };
+		529FC9D4199B6CCC003B72EF /* E_Paging.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = E_Paging.mm; sourceTree = "<group>"; };
+		529FC9D5199B6CCC003B72EF /* E_ReaderDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = E_ReaderDataSource.h; sourceTree = "<group>"; };
+		529FC9D6199B6CCC003B72EF /* E_ReaderDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = E_ReaderDataSource.m; sourceTree = "<group>"; };
+		529FC9D8199B6CCC003B72EF /* Chapter1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Chapter1.txt; sourceTree = "<group>"; };
+		529FC9D9199B6CCC003B72EF /* Chapter2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Chapter2.txt; sourceTree = "<group>"; };
+		529FC9DA199B6CCC003B72EF /* Chapter3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Chapter3.txt; sourceTree = "<group>"; };
+		529FC9DB199B6CCC003B72EF /* Chapter4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Chapter4.txt; sourceTree = "<group>"; };
+		529FC9DC199B6CCC003B72EF /* Chapter5.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Chapter5.txt; sourceTree = "<group>"; };
+		529FC9DD199B6CCC003B72EF /* Chapter6.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Chapter6.txt; sourceTree = "<group>"; };
+		529FC9DE199B6CCC003B72EF /* Chapter7.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Chapter7.txt; sourceTree = "<group>"; };
+		529FC9E0199B6CCC003B72EF /* E_ReaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = E_ReaderView.h; sourceTree = "<group>"; };
+		529FC9E1199B6CCC003B72EF /* E_ReaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = E_ReaderView.m; sourceTree = "<group>"; };
+		529FC9E3199B6CCC003B72EF /* E_ReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = E_ReaderViewController.h; sourceTree = "<group>"; };
+		529FC9E4199B6CCC003B72EF /* E_ReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = E_ReaderViewController.m; sourceTree = "<group>"; };
+		529FC9E5199B6CCC003B72EF /* E_ScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = E_ScrollViewController.h; sourceTree = "<group>"; };
+		529FC9E6199B6CCC003B72EF /* E_ScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = E_ScrollViewController.m; sourceTree = "<group>"; };
 		8DCD2B9222F14BB2BD7BF086 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E080CC681984EA5800DD8CEE /* login_btn_blue_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_btn_blue_nor@2x.png"; sourceTree = "<group>"; };
 		E080CC691984EA5800DD8CEE /* login_btn_blue_press@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_btn_blue_press@2x.png"; sourceTree = "<group>"; };
@@ -109,6 +144,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		529FC9CD199B6CCC003B72EF /* EReader */ = {
+			isa = PBXGroup;
+			children = (
+				529FC9CE199B6CCC003B72EF /* Mode */,
+				529FC9D7199B6CCC003B72EF /* resource */,
+				529FC9DF199B6CCC003B72EF /* View */,
+				529FC9E2199B6CCC003B72EF /* ViewController */,
+			);
+			path = EReader;
+			sourceTree = "<group>";
+		};
+		529FC9CE199B6CCC003B72EF /* Mode */ = {
+			isa = PBXGroup;
+			children = (
+				529FC9CF199B6CCC003B72EF /* E_CommonManager.h */,
+				529FC9D0199B6CCC003B72EF /* E_CommonManager.m */,
+				529FC9D1199B6CCC003B72EF /* E_EveryChapter.h */,
+				529FC9D2199B6CCC003B72EF /* E_EveryChapter.m */,
+				529FC9D3199B6CCC003B72EF /* E_Paging.h */,
+				529FC9D4199B6CCC003B72EF /* E_Paging.mm */,
+				529FC9D5199B6CCC003B72EF /* E_ReaderDataSource.h */,
+				529FC9D6199B6CCC003B72EF /* E_ReaderDataSource.m */,
+			);
+			path = Mode;
+			sourceTree = "<group>";
+		};
+		529FC9D7199B6CCC003B72EF /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				529FC9D8199B6CCC003B72EF /* Chapter1.txt */,
+				529FC9D9199B6CCC003B72EF /* Chapter2.txt */,
+				529FC9DA199B6CCC003B72EF /* Chapter3.txt */,
+				529FC9DB199B6CCC003B72EF /* Chapter4.txt */,
+				529FC9DC199B6CCC003B72EF /* Chapter5.txt */,
+				529FC9DD199B6CCC003B72EF /* Chapter6.txt */,
+				529FC9DE199B6CCC003B72EF /* Chapter7.txt */,
+			);
+			path = resource;
+			sourceTree = "<group>";
+		};
+		529FC9DF199B6CCC003B72EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				529FC9E0199B6CCC003B72EF /* E_ReaderView.h */,
+				529FC9E1199B6CCC003B72EF /* E_ReaderView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		529FC9E2199B6CCC003B72EF /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				529FC9E3199B6CCC003B72EF /* E_ReaderViewController.h */,
+				529FC9E4199B6CCC003B72EF /* E_ReaderViewController.m */,
+				529FC9E5199B6CCC003B72EF /* E_ScrollViewController.h */,
+				529FC9E6199B6CCC003B72EF /* E_ScrollViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		E080CC671984EA4300DD8CEE /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +260,7 @@
 		E0EE20A01983A57500D930E5 /* RichPhoto */ = {
 			isa = PBXGroup;
 			children = (
+				529FC9CD199B6CCC003B72EF /* EReader */,
 				E0EE20A91983A57500D930E5 /* AppDelegate.h */,
 				E0EE20AA1983A57500D930E5 /* AppDelegate.m */,
 				E0EE20C91983A5B100D930E5 /* RootViewController.h */,
@@ -301,14 +397,21 @@
 			files = (
 				E080CC7119851F1600DD8CEE /* login_avatar@2x.png in Resources */,
 				E0EE20CE1983A5ED00D930E5 /* LICENSE in Resources */,
+				529FC9EF199B6CCC003B72EF /* Chapter5.txt in Resources */,
+				529FC9F1199B6CCC003B72EF /* Chapter7.txt in Resources */,
 				E080CC6A1984EA5800DD8CEE /* login_btn_blue_nor@2x.png in Resources */,
 				E080CC731985224200DD8CEE /* line@2x.png in Resources */,
+				529FC9EB199B6CCC003B72EF /* Chapter1.txt in Resources */,
+				529FC9EE199B6CCC003B72EF /* Chapter4.txt in Resources */,
+				529FC9F0199B6CCC003B72EF /* Chapter6.txt in Resources */,
 				E0EE20A51983A57500D930E5 /* InfoPlist.strings in Resources */,
 				529FC9C9199B5E28003B72EF /* Localizable.strings in Resources */,
+				529FC9ED199B6CCC003B72EF /* Chapter3.txt in Resources */,
 				E0EE20CF1983A5ED00D930E5 /* README.md in Resources */,
 				E0EE20AD1983A57500D930E5 /* Images.xcassets in Resources */,
 				E080CC6B1984EA5800DD8CEE /* login_btn_blue_press@2x.png in Resources */,
 				E080CC75198524D500DD8CEE /* login_textfield_more@2x.png in Resources */,
+				529FC9EC199B6CCC003B72EF /* Chapter2.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,10 +464,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0EE20AB1983A57500D930E5 /* AppDelegate.m in Sources */,
+				529FC9F3199B6CCC003B72EF /* E_ReaderViewController.m in Sources */,
+				529FC9E8199B6CCC003B72EF /* E_EveryChapter.m in Sources */,
 				E0EE20A71983A57500D930E5 /* main.m in Sources */,
+				529FC9EA199B6CCC003B72EF /* E_ReaderDataSource.m in Sources */,
 				E0EE20D21984D9CD00D930E5 /* BootViewController.m in Sources */,
+				529FC9E9199B6CCC003B72EF /* E_Paging.mm in Sources */,
+				529FC9F4199B6CCC003B72EF /* E_ScrollViewController.m in Sources */,
+				529FC9E7199B6CCC003B72EF /* E_CommonManager.m in Sources */,
 				E080CC6F1984EEA300DD8CEE /* UIImage+ResizableImage.m in Sources */,
 				E0EE20CB1983A5B100D930E5 /* RootViewController.m in Sources */,
+				529FC9F2199B6CCC003B72EF /* E_ReaderView.m in Sources */,
 				E0EE20D61984DB6D00D930E5 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,6 +8,7 @@
 
 #import "RootViewController.h"
 #import "LoginViewController.h"
+#import "E_ScrollViewController.h"
 
 @interface RootViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -32,7 +33,7 @@
     [_tableview setFrame:self.view.frame];
     [self.view addSubview:_tableview];
     
-    self.dataArr = @[@"高仿登录"];
+    self.dataArr = @[@"高仿登录",@"EReader"];
 }
 
 #pragma mark - UITableViewDelegate
@@ -62,8 +63,13 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     switch (indexPath.row) {
-        case 0:{
+        case 0: {   //@"高仿登录"
             LoginViewController *loginvctrl = [[LoginViewController alloc] init];
+            [self presentViewController:loginvctrl animated:NO completion:nil];
+        }
+            break;
+        case 1: {   //@"EReader"
+            E_ScrollViewController *loginvctrl = [[E_ScrollViewController alloc] init];
             [self presentViewController:loginvctrl animated:NO completion:nil];
         }
             break;
