@@ -71,7 +71,7 @@
                           forState:UIControlStateHighlighted];
     [_btn_login setFrame:CGRectMake(10, CGRectGetMaxY(_tableview.frame)+15, 300, 44)];
     [_btn_login addTarget:self action:@selector(loginAction:) forControlEvents:UIControlEventTouchUpInside];
-    [_btn_login setTitle:@"登录" forState:UIControlStateNormal];
+    [_btn_login setTitle:NSLocalizedString(@"Sign in",@"登录") forState:UIControlStateNormal];
     [self.view addSubview:_btn_login];
     
     self.tf_account = ({
@@ -79,7 +79,7 @@
         [account setFrame:CGRectMake(44, 2, 320-88, 40)];
         [account setTextAlignment:NSTextAlignmentCenter];
         [account setClearButtonMode:UITextFieldViewModeWhileEditing];
-        [account setPlaceholder:@"账号/邮箱/手机号"];
+        [account setPlaceholder:NSLocalizedString(@"Username/Email/PhoneNum", @"账号/邮箱/手机号")];
         [account setDelegate:self];
         account;
     });
@@ -90,7 +90,7 @@
         [password setSecureTextEntry:YES];
         [password setTextAlignment:NSTextAlignmentCenter];
         [password setClearButtonMode:UITextFieldViewModeWhileEditing];
-        [password setPlaceholder:@"密码"];
+        [password setPlaceholder:NSLocalizedString(@"Password", @"密码")];
         [password setDelegate:self];
         password;
     });
@@ -136,7 +136,7 @@
     
     self.btn_newUser = [UIButton buttonWithType:UIButtonTypeCustom];
     [_btn_newUser setFrame:CGRectMake(235, CGRectGetHeight(self.view.frame) - 45, 70, 33)];
-    [_btn_newUser setTitle:@"新用户" forState:UIControlStateNormal];
+    [_btn_newUser setTitle:NSLocalizedString(@"Sign up", @"新用户")  forState:UIControlStateNormal];
     [_btn_newUser setTitleColor:[UIColor colorWithRed:63.0f/255.0 green:107.0f/255.0 blue:252.0f/255 alpha:1.0f] forState:UIControlStateNormal];
     [_btn_newUser.layer setCornerRadius:3.0f];
     [_btn_newUser.layer setBorderWidth:1.0f];

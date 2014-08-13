@@ -45,6 +45,8 @@
 
 /* Begin PBXFileReference section */
 		3FF6971696844970A09F3974 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		529FC9B4199B38FC003B72EF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		529FC9B5199B38FC003B72EF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		8DCD2B9222F14BB2BD7BF086 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E080CC681984EA5800DD8CEE /* login_btn_blue_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_btn_blue_nor@2x.png"; sourceTree = "<group>"; };
 		E080CC691984EA5800DD8CEE /* login_btn_blue_press@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_btn_blue_press@2x.png"; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"zh-Hans",
 			);
 			mainGroup = E0EE208E1983A57500D930E5;
 			productRefGroup = E0EE20981983A57500D930E5 /* Products */;
@@ -384,6 +387,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				E0EE20A41983A57500D930E5 /* en */,
+				529FC9B4199B38FC003B72EF /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -392,6 +396,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				E0EE20BD1983A57500D930E5 /* en */,
+				529FC9B5199B38FC003B72EF /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
