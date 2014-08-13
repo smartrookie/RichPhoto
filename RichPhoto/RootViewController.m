@@ -79,4 +79,16 @@
     }
 }
 
+- (BOOL)shouldAutorotate
+{
+    return YES;
+}
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    [UIView animateWithDuration:duration animations:^{
+        [_tableview setFrame:self.view.frame];
+    }];
+}
+
 @end
