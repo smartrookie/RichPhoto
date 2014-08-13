@@ -1,7 +1,2 @@
 /* Localized versions of Info.plist keys */
 CFBundleDisplayName ="富媒体";
-
-"Sign in"       =       "登录";
-"Password"      =       "密码";
-"Username/Email/PhoneNum" = "账号/邮箱/手机号";
-"Sign up"       =       "新用户";
