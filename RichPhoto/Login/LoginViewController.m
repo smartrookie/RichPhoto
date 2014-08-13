@@ -214,7 +214,7 @@
 - (void)loginAction:(UIButton *)sender
 {
     NSLog(@"login button pressed");
-    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 - (void)moreAction:(UIButton *)sender
@@ -274,6 +274,16 @@
 {
     [_tf_account resignFirstResponder];
     [_tf_password resignFirstResponder];
+}
+
+- (BOOL)shouldAutorotate
+{
+    return NO;
+}
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 @end

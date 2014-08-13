@@ -64,7 +64,7 @@
     switch (indexPath.row) {
         case 0:{
             LoginViewController *loginvctrl = [[LoginViewController alloc] init];
-            [self.navigationController pushViewController:loginvctrl animated:NO];
+            [self presentViewController:loginvctrl animated:NO completion:nil];
         }
             break;
             
