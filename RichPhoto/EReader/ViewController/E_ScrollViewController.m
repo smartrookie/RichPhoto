@@ -19,7 +19,8 @@
     E_Paging             * _paginater;
     BOOL _isTurnOver;     //是否跨章；
     BOOL _isRight;       //翻页方向  yes为右 no为左
-
+    BOOL _pageIsAnimating;          //某些特别操作会导致只调用datasource的代理方法 delegate的不调用
+    
 }
 @property (copy, nonatomic) NSString* chapterTitle_;
 @property (copy, nonatomic) NSString* chapterContent_;
@@ -45,16 +46,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//设置总章节数
+    //设置总章节数
     [E_ReaderDataSource shareInstance].totalChapter = 7;
     self.fontSize = [E_CommonManager fontSize];
+    _pageIsAnimating = NO;
     
-// // // /// // /////////////////////////////////////
+    // // // /// // /////////////////////////////////////
     
     
-     E_EveryChapter *chapter = [[E_ReaderDataSource shareInstance] openChapter];
-     [self parseChapter:chapter];
-     [self initPageView];
+    E_EveryChapter *chapter = [[E_ReaderDataSource shareInstance] openChapter];
+    [self parseChapter:chapter];
+    [self initPageView];
 }
 
 - (void)initPageView
@@ -65,7 +67,7 @@
     _pageViewController.dataSource = self;
     [self addChildViewController:_pageViewController];
     [self.view addSubview:_pageViewController.view];
-   
+    
     [self showPage:0];
 }
 
@@ -105,7 +107,7 @@
     [_paginater paginate];
     int showPage = [self findOffsetInNewPage:self.readOffset];
     [self showPage:showPage];
-
+    
 }
 
 - (NSUInteger)findOffsetInNewPage:(NSUInteger)offset
@@ -125,11 +127,11 @@
 {
     E_ReaderViewController *readerController = [self readerControllerWithPage:page];
     [_pageViewController setViewControllers:@[readerController]
-                                   direction:UIPageViewControllerNavigationDirectionForward
-                                    animated:NO
-                                  completion:^(BOOL f){
-                                  
-                                  }];
+                                  direction:UIPageViewControllerNavigationDirectionForward
+                                   animated:NO
+                                 completion:^(BOOL f){
+                                     
+                                 }];
 }
 
 
@@ -164,17 +166,32 @@
     _isTurnOver = NO;
     _isRight = NO;
     
+    
     E_ReaderViewController *reader = (E_ReaderViewController *)viewController;
     NSUInteger currentPage = reader.currentPage;
+    
+    if (_pageIsAnimating && currentPage <= 0) {
+        
+        E_EveryChapter *chapter = [[E_ReaderDataSource shareInstance] nextChapter];
+        [self parseChapter:chapter];
+        
+    }
+    
     if (currentPage <= 0) {
+        
         _isTurnOver = YES;
         E_EveryChapter *chapter = [[E_ReaderDataSource shareInstance] preChapter];
         if (chapter == nil || chapter.chapterContent == nil || [chapter.chapterContent isEqualToString:@""]) {
+            _pageIsAnimating = NO;
             return  nil;
         }
         [self parseChapter:chapter];
         currentPage = self.lastPage + 1;
     }
+    
+    
+    _pageIsAnimating = YES;
+    
     E_ReaderViewController *textController = [self readerControllerWithPage:currentPage - 1];
     return textController;
 }
@@ -183,29 +200,47 @@
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController
        viewControllerAfterViewController:(UIViewController *)viewController
 {
-    NSLog(@"viewController == %@",viewController);
+    
     _isTurnOver = NO;
     _isRight = YES;
     
     E_ReaderViewController *reader = (E_ReaderViewController *)viewController;
     NSUInteger currentPage = reader.currentPage;
+    
+    
+    if (_pageIsAnimating && currentPage <= 0) {
+        E_EveryChapter *chapter = [[E_ReaderDataSource shareInstance] nextChapter];
+        [self parseChapter:chapter];
+        
+    }
+    
+    
     if (currentPage >= self.lastPage) {
         
         _isTurnOver = YES;
         E_EveryChapter *chapter = [[E_ReaderDataSource shareInstance] nextChapter];
         if (chapter == nil || chapter.chapterContent == nil || [chapter.chapterContent isEqualToString:@""]) {
+            _pageIsAnimating = NO;
             return nil;
         }
         [self parseChapter:chapter];
         currentPage = -1;
     }
+    
+    _pageIsAnimating = YES;
+    
     E_ReaderViewController *textController = [self readerControllerWithPage:currentPage + 1];
     return textController;
 }
-
+- (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray *)pendingViewControllers
+{
+    _pageIsAnimating = NO;
+    
+}
 
 - (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed
 {
+    
     if (completed) {
         //翻页完成
         
