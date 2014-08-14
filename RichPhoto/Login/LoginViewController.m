@@ -231,28 +231,28 @@
 {
     [self resignKeyboard];
     if (!isShowExt && [_countArr count] > 0) {
+        isShowExt = YES;
+        [self.tf_account setTextColor:[UIColor grayColor]];
+        [self.tf_password setTextColor:[UIColor grayColor]];
         [UIView animateWithDuration:0.3f animations:^{
             [_tableview setFrame:CGRectMake(0, CGRectGetMaxY(_iv_avatar.frame)+5, 320, 88 + 100)];
             [_btn_login setFrame:CGRectMake(10, CGRectGetMaxY(_tableview.frame)+15, 300, 44)];
             [_btn_more setTransform:CGAffineTransformMakeRotation(M_PI)];
         }];
-        isShowExt = YES;
-        [self.tf_account setTextColor:[UIColor grayColor]];
-        [self.tf_password setTextColor:[UIColor grayColor]];
     }
 }
 
 - (void)closeAnimation
 {
     if (isShowExt || [_countArr count] == 0) {
+        isShowExt = NO;
+        [self.tf_account setTextColor:[UIColor blackColor]];
+        [self.tf_password setTextColor:[UIColor blackColor]];
         [UIView animateWithDuration:0.3f animations:^{
             [_tableview setFrame:CGRectMake(0, CGRectGetMaxY(_iv_avatar.frame)+5, 320, 88)];
             [_btn_login setFrame:CGRectMake(10, CGRectGetMaxY(_tableview.frame)+15, 300, 44)];
             [_btn_more setTransform:CGAffineTransformMakeRotation(0)];
         }];
-        isShowExt = NO;
-        [self.tf_account setTextColor:[UIColor blackColor]];
-        [self.tf_password setTextColor:[UIColor blackColor]];
     }
 }
 

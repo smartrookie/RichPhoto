@@ -19,6 +19,12 @@
 
 @implementation RootViewController
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [_tableview setFrame:self.view.frame];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
