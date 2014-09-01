@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52864BA119B47BEE003D06DC /* login_account_clear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52864BA019B47BEE003D06DC /* login_account_clear@2x.png */; };
 		529FC9C9199B5E28003B72EF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 529FC9CB199B5E28003B72EF /* Localizable.strings */; };
 		529FC9E7199B6CCC003B72EF /* E_CommonManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 529FC9D0199B6CCC003B72EF /* E_CommonManager.m */; };
 		529FC9E8199B6CCC003B72EF /* E_EveryChapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 529FC9D2199B6CCC003B72EF /* E_EveryChapter.m */; };
@@ -60,6 +61,7 @@
 
 /* Begin PBXFileReference section */
 		3FF6971696844970A09F3974 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		52864BA019B47BEE003D06DC /* login_account_clear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_account_clear@2x.png"; sourceTree = "<group>"; };
 		529FC9B4199B38FC003B72EF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		529FC9B5199B38FC003B72EF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		529FC9CA199B5E28003B72EF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				E080CC721985224200DD8CEE /* line@2x.png */,
 				E080CC691984EA5800DD8CEE /* login_btn_blue_press@2x.png */,
 				E080CC74198524D500DD8CEE /* login_textfield_more@2x.png */,
+				52864BA019B47BEE003D06DC /* login_account_clear@2x.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				529FC9F1199B6CCC003B72EF /* Chapter7.txt in Resources */,
 				E080CC6A1984EA5800DD8CEE /* login_btn_blue_nor@2x.png in Resources */,
 				E080CC731985224200DD8CEE /* line@2x.png in Resources */,
+				52864BA119B47BEE003D06DC /* login_account_clear@2x.png in Resources */,
 				529FC9EB199B6CCC003B72EF /* Chapter1.txt in Resources */,
 				529FC9EE199B6CCC003B72EF /* Chapter4.txt in Resources */,
 				529FC9F0199B6CCC003B72EF /* Chapter6.txt in Resources */,
