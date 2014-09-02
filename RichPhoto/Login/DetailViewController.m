@@ -9,9 +9,9 @@
 #import "DetailViewController.h"
 #import "GesturePasswordController.h"
 #import "UIImage+ResizableImage.h"
+#import "ImageFilterViewController.h"
 
-
-@interface DetailViewController ()<GesturePasswordVcDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate>
+@interface DetailViewController ()<GesturePasswordVcDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate,ImageFilterDelegate>
 {
     UIImagePickerController *_libraryPicker;
 
@@ -111,8 +111,20 @@
     _iv_avatar.userInteractionEnabled = YES;
     [_iv_avatar setImage:[UIImage imageNamed:@"login_avatar" resizableDefault:YES]];
     [self.view addSubview:_iv_avatar];
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changeAvatar)];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showAvatar)];
     [_iv_avatar addGestureRecognizer:tap];
+    
+    UIButton *changeAvatar = [UIButton buttonWithType:0];
+    changeAvatar.frame = CGRectMake(230, 84, 70, 44);
+    [changeAvatar setTitle:@"设置头像" forState:0];
+    [changeAvatar.layer setBorderWidth:1.0];
+    [changeAvatar addTarget:self action:@selector(changeAvatar) forControlEvents:UIControlEventTouchUpInside];
+    [changeAvatar.layer setBorderColor:RGB(63, 107, 252, 1.0).CGColor];
+    [changeAvatar setTitleColor:RGB(63, 107, 252, 1.0) forState:0];
+    changeAvatar.backgroundColor = RGB(255, 255,255, 1.0);
+    changeAvatar.titleLabel.font = Font(11);
+    changeAvatar.layer.cornerRadius = 5;
+    [self.view addSubview:changeAvatar];
     
 }
 
@@ -156,6 +168,15 @@
     
 }
 
+#pragma mark - 展示头像
+- (void)showAvatar
+{
+    ImageFilterViewController *imageFilterVc = [[ImageFilterViewController alloc] initWithImageView:_iv_avatar.image];
+    imageFilterVc.delegate = self;
+    [self presentViewController:imageFilterVc animated:NO completion:NULL];
+
+}
+
 #pragma mark - 修改头像
 - (void)changeAvatar
 {
@@ -163,6 +184,14 @@
     UIActionSheet *action = [[UIActionSheet alloc] initWithTitle:@"选取图片" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"拍照" otherButtonTitles:@"相册", nil];
     [action showInView:self.view];
 }
+
+#pragma mark -  imageFilterVcDelegate
+- (void)feedImageToDetailVc:(UIImage *)senderImage
+{
+    _iv_avatar.image = senderImage;
+    
+}
+
 
 #pragma mark - actionsheetDelegate
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -200,8 +229,16 @@
 
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    
     UIImage *gotImage = [info objectForKey:UIImagePickerControllerOriginalImage];
-    UIImage *newImage = [UIImage processWithImageFilterType:MonochromeType usingImage:gotImage];
+    _iv_avatar.image = gotImage;
+    [self dismissViewControllerAnimated:NO completion:NULL];
+    ImageFilterViewController *imageFilterVc = [[ImageFilterViewController alloc] initWithImageView:gotImage];
+    imageFilterVc.delegate = self;
+    [self presentViewController:imageFilterVc animated:NO completion:NULL];
+   
 }
+
+
+
 @end

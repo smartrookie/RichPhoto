@@ -21,6 +21,8 @@
 
 #define RGB(r,g,b,a) ([UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:a])
 #define Font(f)      ([UIFont systemFontOfSize:f])
+#define ISIOS7  [[[UIDevice currentDevice] systemVersion] floatValue]>=7.0
+#define isInch4 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
 
 #ifdef DEBUG
 #define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);

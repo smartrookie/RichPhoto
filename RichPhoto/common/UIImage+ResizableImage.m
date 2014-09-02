@@ -7,6 +7,7 @@
 //
 
 #import "UIImage+ResizableImage.h"
+#import <CoreImage/CIImage.h>
 
 @implementation UIImage (ResizableImage)
 
@@ -26,9 +27,22 @@
 {
     UIImage *completeImage = nil;
     switch (filterType) {
-        case MonochromeType:
-            completeImage = [self processWithImageFilterType:MonochromeType usingImage:beginImage];
-            break;
+        case MonochromeType:{
+            
+            CIImage *ciImage = [[CIImage alloc] initWithImage:beginImage];
+            CIFilter *filter = [CIFilter filterWithName:@"CIColorMonochrome"
+                                          keysAndValues:kCIInputImageKey,ciImage,kCIInputColorKey,[CIColor colorWithCGColor:[UIColor lightGrayColor].CGColor],nil];
+            CIContext *context = [CIContext contextWithOptions:nil];
+            CIImage *outputImage = [filter outputImage];
+            CGImageRef cgImage = [context createCGImage:outputImage
+                                               fromRect:[outputImage extent]];
+            
+          
+            completeImage = [UIImage imageWithCGImage:cgImage];
+            CGImageRelease(cgImage);
+            return completeImage;
+           
+        }
             
         default:
             break;
@@ -37,13 +51,7 @@
     return completeImage;
 }
 
-- (UIImage *)processWithImageFilterType:(ImageFilterType)filterType usingImage:(UIImage *)beginImage
-{
-    DLog(@"xxx");
-    return nil;
-    
 
-}
 
 
 @end

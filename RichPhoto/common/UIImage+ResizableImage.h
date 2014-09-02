@@ -12,7 +12,7 @@
  *  滤镜种类
  */
 typedef enum  {
-   MonochromeType = 1,
+   MonochromeType = 1, //黑白照
     
 } ImageFilterType;
 

@@ -74,14 +74,15 @@
 
 + (BOOL)checkLockisSetting
 {
-    BOOL lockOrNot = [[NSUserDefaults standardUserDefaults] boolForKey:@"LockIsSetting"];
-    if (lockOrNot == NO) {
+    KeychainItemWrapper * keychin = [[KeychainItemWrapper alloc]initWithIdentifier:@"LockIsSetting" accessGroup:nil];
+    NSString  *lockOrNot = [keychin objectForKey:(__bridge id)kSecValueData];
+    if ([lockOrNot isEqualToString:@"YES"]) {
         
-        return NO;
+        return YES;
         
     }else {
         
-        return YES;
+        return NO;
     }
 
 }
@@ -89,9 +90,27 @@
 
 + (void)settingLock:(BOOL)yes_no
 {
-    [[NSUserDefaults standardUserDefaults] setBool:yes_no forKey:@"LockIsSetting"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    KeychainItemWrapper * keychin = [[KeychainItemWrapper alloc]initWithIdentifier:@"LockIsSetting" accessGroup:nil];
+    if (yes_no) {
+        
+        [keychin setObject:@"<锁屏>" forKey:(__bridge id)kSecAttrAccount];
+        [keychin setObject:@"YES" forKey:(__bridge id)kSecValueData];
+        
+    }else{
+        
+        [keychin resetKeychainItem];
+    }
 
+}
+
+
++ (UIWindow*)getWindow
+{
+    UIWindow* window = [UIApplication sharedApplication].keyWindow;
+    if (!window) {
+        window = [[UIApplication sharedApplication].windows objectAtIndex:0];
+    }
+    return window;
 }
 
 @end

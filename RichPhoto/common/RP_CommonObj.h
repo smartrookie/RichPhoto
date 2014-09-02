@@ -50,4 +50,9 @@
  */
 + (void)settingLock:(BOOL)yes_no;
 
+/**
+ *  获得window
+ */
++ (UIWindow*)getWindow;
+
 @end
