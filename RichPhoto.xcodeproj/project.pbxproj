@@ -24,6 +24,15 @@
 		529FC9F3199B6CCC003B72EF /* E_ReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529FC9E4199B6CCC003B72EF /* E_ReaderViewController.m */; };
 		529FC9F4199B6CCC003B72EF /* E_ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529FC9E6199B6CCC003B72EF /* E_ScrollViewController.m */; };
 		B13200E5E1C346FD864E20AF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DCD2B9222F14BB2BD7BF086 /* libPods.a */; };
+		D2B11E8219B5B590004D97FA /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B11E8119B5B590004D97FA /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D2B11E8F19B5B5AB004D97FA /* GesturePasswordButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B11E8519B5B5AB004D97FA /* GesturePasswordButton.m */; };
+		D2B11E9019B5B5AB004D97FA /* GesturePasswordController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B11E8719B5B5AB004D97FA /* GesturePasswordController.m */; };
+		D2B11E9119B5B5AB004D97FA /* GesturePasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B11E8919B5B5AB004D97FA /* GesturePasswordView.m */; };
+		D2B11E9219B5B5AB004D97FA /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B11E8C19B5B5AB004D97FA /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D2B11E9319B5B5AB004D97FA /* TentacleView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B11E8E19B5B5AB004D97FA /* TentacleView.m */; };
+		D2B11E9619B5B5D4004D97FA /* RP_CommonObj.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B11E9519B5B5D4004D97FA /* RP_CommonObj.m */; };
+		D2B11E9919B5B5F1004D97FA /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B11E9819B5B5F1004D97FA /* DetailViewController.m */; };
+		D2B11E9B19B5B696004D97FA /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B11E9A19B5B696004D97FA /* CoreImage.framework */; };
 		E080CC6A1984EA5800DD8CEE /* login_btn_blue_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E080CC681984EA5800DD8CEE /* login_btn_blue_nor@2x.png */; };
 		E080CC6B1984EA5800DD8CEE /* login_btn_blue_press@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E080CC691984EA5800DD8CEE /* login_btn_blue_press@2x.png */; };
 		E080CC6F1984EEA300DD8CEE /* UIImage+ResizableImage.m in Sources */ = {isa = PBXBuildFile; fileRef = E080CC6E1984EEA300DD8CEE /* UIImage+ResizableImage.m */; };
@@ -88,6 +97,23 @@
 		529FC9E5199B6CCC003B72EF /* E_ScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = E_ScrollViewController.h; sourceTree = "<group>"; };
 		529FC9E6199B6CCC003B72EF /* E_ScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = E_ScrollViewController.m; sourceTree = "<group>"; };
 		8DCD2B9222F14BB2BD7BF086 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2B11E8019B5B590004D97FA /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		D2B11E8119B5B590004D97FA /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		D2B11E8419B5B5AB004D97FA /* GesturePasswordButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GesturePasswordButton.h; sourceTree = "<group>"; };
+		D2B11E8519B5B5AB004D97FA /* GesturePasswordButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GesturePasswordButton.m; sourceTree = "<group>"; };
+		D2B11E8619B5B5AB004D97FA /* GesturePasswordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GesturePasswordController.h; sourceTree = "<group>"; };
+		D2B11E8719B5B5AB004D97FA /* GesturePasswordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GesturePasswordController.m; sourceTree = "<group>"; };
+		D2B11E8819B5B5AB004D97FA /* GesturePasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GesturePasswordView.h; sourceTree = "<group>"; };
+		D2B11E8919B5B5AB004D97FA /* GesturePasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GesturePasswordView.m; sourceTree = "<group>"; };
+		D2B11E8B19B5B5AB004D97FA /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		D2B11E8C19B5B5AB004D97FA /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
+		D2B11E8D19B5B5AB004D97FA /* TentacleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TentacleView.h; sourceTree = "<group>"; };
+		D2B11E8E19B5B5AB004D97FA /* TentacleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TentacleView.m; sourceTree = "<group>"; };
+		D2B11E9419B5B5D4004D97FA /* RP_CommonObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RP_CommonObj.h; sourceTree = "<group>"; };
+		D2B11E9519B5B5D4004D97FA /* RP_CommonObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RP_CommonObj.m; sourceTree = "<group>"; };
+		D2B11E9719B5B5F1004D97FA /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		D2B11E9819B5B5F1004D97FA /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		D2B11E9A19B5B696004D97FA /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		E080CC681984EA5800DD8CEE /* login_btn_blue_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_btn_blue_nor@2x.png"; sourceTree = "<group>"; };
 		E080CC691984EA5800DD8CEE /* login_btn_blue_press@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_btn_blue_press@2x.png"; sourceTree = "<group>"; };
 		E080CC6D1984EEA300DD8CEE /* UIImage+ResizableImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ResizableImage.h"; sourceTree = "<group>"; };
@@ -126,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2B11E9B19B5B696004D97FA /* CoreImage.framework in Frameworks */,
 				E0EE209D1983A57500D930E5 /* CoreGraphics.framework in Frameworks */,
 				E0EE209F1983A57500D930E5 /* UIKit.framework in Frameworks */,
 				E0EE209B1983A57500D930E5 /* Foundation.framework in Frameworks */,
@@ -206,6 +233,40 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		D2B11E7F19B5B590004D97FA /* ThirdPart */ = {
+			isa = PBXGroup;
+			children = (
+				D2B11E8019B5B590004D97FA /* Reachability.h */,
+				D2B11E8119B5B590004D97FA /* Reachability.m */,
+			);
+			path = ThirdPart;
+			sourceTree = "<group>";
+		};
+		D2B11E8319B5B5AB004D97FA /* GesturePassword */ = {
+			isa = PBXGroup;
+			children = (
+				D2B11E8419B5B5AB004D97FA /* GesturePasswordButton.h */,
+				D2B11E8519B5B5AB004D97FA /* GesturePasswordButton.m */,
+				D2B11E8619B5B5AB004D97FA /* GesturePasswordController.h */,
+				D2B11E8719B5B5AB004D97FA /* GesturePasswordController.m */,
+				D2B11E8819B5B5AB004D97FA /* GesturePasswordView.h */,
+				D2B11E8919B5B5AB004D97FA /* GesturePasswordView.m */,
+				D2B11E8A19B5B5AB004D97FA /* KeychainItemWrapper */,
+				D2B11E8D19B5B5AB004D97FA /* TentacleView.h */,
+				D2B11E8E19B5B5AB004D97FA /* TentacleView.m */,
+			);
+			path = GesturePassword;
+			sourceTree = "<group>";
+		};
+		D2B11E8A19B5B5AB004D97FA /* KeychainItemWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				D2B11E8B19B5B5AB004D97FA /* KeychainItemWrapper.h */,
+				D2B11E8C19B5B5AB004D97FA /* KeychainItemWrapper.m */,
+			);
+			path = KeychainItemWrapper;
+			sourceTree = "<group>";
+		};
 		E080CC671984EA4300DD8CEE /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +285,8 @@
 			children = (
 				E080CC6D1984EEA300DD8CEE /* UIImage+ResizableImage.h */,
 				E080CC6E1984EEA300DD8CEE /* UIImage+ResizableImage.m */,
+				D2B11E9419B5B5D4004D97FA /* RP_CommonObj.h */,
+				D2B11E9519B5B5D4004D97FA /* RP_CommonObj.m */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -251,6 +314,7 @@
 		E0EE20991983A57500D930E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D2B11E9A19B5B696004D97FA /* CoreImage.framework */,
 				E0EE209A1983A57500D930E5 /* Foundation.framework */,
 				E0EE209C1983A57500D930E5 /* CoreGraphics.framework */,
 				E0EE209E1983A57500D930E5 /* UIKit.framework */,
@@ -263,6 +327,8 @@
 		E0EE20A01983A57500D930E5 /* RichPhoto */ = {
 			isa = PBXGroup;
 			children = (
+				D2B11E8319B5B5AB004D97FA /* GesturePassword */,
+				D2B11E7F19B5B590004D97FA /* ThirdPart */,
 				529FC9CD199B6CCC003B72EF /* EReader */,
 				E0EE20A91983A57500D930E5 /* AppDelegate.h */,
 				E0EE20AA1983A57500D930E5 /* AppDelegate.m */,
@@ -315,6 +381,8 @@
 			children = (
 				E0EE20D41984DB6D00D930E5 /* LoginViewController.h */,
 				E0EE20D51984DB6D00D930E5 /* LoginViewController.m */,
+				D2B11E9719B5B5F1004D97FA /* DetailViewController.h */,
+				D2B11E9819B5B5F1004D97FA /* DetailViewController.m */,
 				E080CC671984EA4300DD8CEE /* images */,
 			);
 			path = Login;
@@ -470,16 +538,24 @@
 				E0EE20AB1983A57500D930E5 /* AppDelegate.m in Sources */,
 				529FC9F3199B6CCC003B72EF /* E_ReaderViewController.m in Sources */,
 				529FC9E8199B6CCC003B72EF /* E_EveryChapter.m in Sources */,
+				D2B11E8F19B5B5AB004D97FA /* GesturePasswordButton.m in Sources */,
 				E0EE20A71983A57500D930E5 /* main.m in Sources */,
 				529FC9EA199B6CCC003B72EF /* E_ReaderDataSource.m in Sources */,
 				E0EE20D21984D9CD00D930E5 /* BootViewController.m in Sources */,
 				529FC9E9199B6CCC003B72EF /* E_Paging.mm in Sources */,
+				D2B11E9319B5B5AB004D97FA /* TentacleView.m in Sources */,
+				D2B11E9219B5B5AB004D97FA /* KeychainItemWrapper.m in Sources */,
+				D2B11E9619B5B5D4004D97FA /* RP_CommonObj.m in Sources */,
 				529FC9F4199B6CCC003B72EF /* E_ScrollViewController.m in Sources */,
+				D2B11E8219B5B590004D97FA /* Reachability.m in Sources */,
 				529FC9E7199B6CCC003B72EF /* E_CommonManager.m in Sources */,
 				E080CC6F1984EEA300DD8CEE /* UIImage+ResizableImage.m in Sources */,
+				D2B11E9019B5B5AB004D97FA /* GesturePasswordController.m in Sources */,
 				E0EE20CB1983A5B100D930E5 /* RootViewController.m in Sources */,
+				D2B11E9119B5B5AB004D97FA /* GesturePasswordView.m in Sources */,
 				529FC9F2199B6CCC003B72EF /* E_ReaderView.m in Sources */,
 				E0EE20D61984DB6D00D930E5 /* LoginViewController.m in Sources */,
+				D2B11E9919B5B5F1004D97FA /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

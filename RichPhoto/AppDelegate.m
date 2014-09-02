@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "RootViewController.h"
+#import "GesturePasswordController.h"
 
 @implementation AppDelegate
 
@@ -21,6 +22,12 @@
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    if ([RP_CommonObj checkHasGesturePassWord] && [RP_CommonObj checkLockisSetting]) {//检查是否设置手势密码以及打开了手势密码开关
+        
+        GesturePasswordController *gesturePassWord = [[GesturePasswordController alloc] initWithType:HomePageType];
+        [navictrl presentViewController:gesturePassWord animated:NO completion:NULL];
+    }
     return YES;
 }
 

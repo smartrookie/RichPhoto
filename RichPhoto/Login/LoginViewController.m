@@ -7,6 +7,8 @@
 //
 
 #import "LoginViewController.h"
+#import "DetailViewController.h"
+
 
 @interface LoginViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate> {
     BOOL    hasNaviBar;
@@ -213,7 +215,8 @@
 - (void)loginAction:(UIButton *)sender
 {
     NSLog(@"login button pressed");
-    [self dismissViewControllerAnimated:NO completion:nil];
+    DetailViewController *detailVc = [[DetailViewController alloc] init];
+    [self presentViewController:detailVc animated:YES completion:NULL];
 }
 
 - (void)moreAction:(UIButton *)sender

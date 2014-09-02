@@ -22,4 +22,28 @@
     }
 }
 
++ (UIImage *)processWithImageFilterType:(ImageFilterType)filterType usingImage:(UIImage *)beginImage;
+{
+    UIImage *completeImage = nil;
+    switch (filterType) {
+        case MonochromeType:
+            completeImage = [self processWithImageFilterType:MonochromeType usingImage:beginImage];
+            break;
+            
+        default:
+            break;
+    }
+
+    return completeImage;
+}
+
+- (UIImage *)processWithImageFilterType:(ImageFilterType)filterType usingImage:(UIImage *)beginImage
+{
+    DLog(@"xxx");
+    return nil;
+    
+
+}
+
+
 @end

@@ -8,8 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  滤镜种类
+ */
+typedef enum  {
+   MonochromeType = 1,
+    
+} ImageFilterType;
+
 @interface UIImage (ResizableImage)
 
 + (UIImage *)imageNamed:(NSString *)name resizableDefault:(BOOL)yes_no;
+
++ (UIImage *)processWithImageFilterType:(ImageFilterType)filterType usingImage:(UIImage *)beginImage;
 
 @end
