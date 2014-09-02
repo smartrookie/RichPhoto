@@ -31,7 +31,7 @@
             
             CIImage *ciImage = [[CIImage alloc] initWithImage:beginImage];
             CIFilter *filter = [CIFilter filterWithName:@"CIColorMonochrome"
-                                          keysAndValues:kCIInputImageKey,ciImage,kCIInputColorKey,[CIColor colorWithCGColor:[UIColor lightGrayColor].CGColor],nil];
+                                          keysAndValues:kCIInputImageKey,ciImage,kCIInputColorKey,[CIColor colorWithCGColor:[UIColor lightGrayColor].CGColor],@"inputIntensity",@1.0,nil];
             CIContext *context = [CIContext contextWithOptions:nil];
             CIImage *outputImage = [filter outputImage];
             CGImageRef cgImage = [context createCGImage:outputImage

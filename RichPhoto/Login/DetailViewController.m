@@ -202,7 +202,7 @@
         {
             _libraryPicker = [[UIImagePickerController alloc] init];
             _libraryPicker.delegate = self;
-            _libraryPicker.allowsEditing = NO;
+            _libraryPicker.allowsEditing = YES;
             _libraryPicker.sourceType = UIImagePickerControllerSourceTypeCamera;
             [self presentViewController:_libraryPicker animated:YES completion:NULL];
            
@@ -214,7 +214,7 @@
         {
             _libraryPicker = [[UIImagePickerController alloc] init];
             _libraryPicker.delegate = self;
-            _libraryPicker.allowsEditing = NO;
+            _libraryPicker.allowsEditing = YES;
             _libraryPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
             [self presentViewController:_libraryPicker animated:YES completion:NULL];
            
@@ -230,7 +230,7 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
-    UIImage *gotImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+    UIImage *gotImage = [info objectForKey:UIImagePickerControllerEditedImage];
     _iv_avatar.image = gotImage;
     [self dismissViewControllerAnimated:NO completion:NULL];
     ImageFilterViewController *imageFilterVc = [[ImageFilterViewController alloc] initWithImageView:gotImage];
