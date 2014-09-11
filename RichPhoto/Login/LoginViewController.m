@@ -214,9 +214,7 @@
 #pragma mark- Button Action
 - (void)loginAction:(UIButton *)sender
 {
-    NSLog(@"login button pressed");
-    DetailViewController *detailVc = [[DetailViewController alloc] init];
-    [self presentViewController:detailVc animated:YES completion:NULL];
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 - (void)moreAction:(UIButton *)sender

@@ -9,6 +9,7 @@
 #import "RootViewController.h"
 #import "LoginViewController.h"
 #import "E_ScrollViewController.h"
+#import "DetailViewController.h"
 
 @interface RootViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -39,7 +40,7 @@
     [_tableview setFrame:self.view.frame];
     [self.view addSubview:_tableview];
     
-    self.dataArr = @[@"高仿登录",@"EReader"];
+    self.dataArr = @[@"高仿登录",@"EReader",@"手势密码"];
 }
 
 #pragma mark - UITableViewDelegate
@@ -77,6 +78,11 @@
         case 1: {   //@"EReader"
             E_ScrollViewController *loginvctrl = [[E_ScrollViewController alloc] init];
             [self presentViewController:loginvctrl animated:NO completion:nil];
+        }
+            break;
+        case 2: {   //@"手势密码"
+            DetailViewController *detailVc = [[DetailViewController alloc] init];
+            [self presentViewController:detailVc animated:YES completion:NULL];
         }
             break;
             
