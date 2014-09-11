@@ -43,7 +43,23 @@
             return completeImage;
            
         }
+        case SepiaToneType:{
             
+            CIImage *ciImage = [[CIImage alloc] initWithImage:beginImage];
+            CIFilter *filter = [CIFilter filterWithName:@"CISepiaTone" keysAndValues:kCIInputImageKey,ciImage,@"inputIntensity", [NSNumber numberWithFloat:1.1],nil];
+            
+            CIContext *context = [CIContext contextWithOptions:nil];
+            CIImage *outputImage = [filter outputImage];
+            CGImageRef cgImage = [context createCGImage:outputImage
+                                               fromRect:[outputImage extent]];
+            
+            
+            completeImage = [UIImage imageWithCGImage:cgImage];
+            CGImageRelease(cgImage);
+            return completeImage;
+
+        }
+            break;
         default:
             break;
     }

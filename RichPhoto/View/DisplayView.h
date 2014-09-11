@@ -23,11 +23,12 @@
     UIView *backgroudView;
     BOOL   is_big;
     UIScrollView *_filterScroll;
-
+    
 }
 
 @property (nonatomic,retain)UIImageView *asyImageView;
 @property (nonatomic,assign)id<DisplayDelegate>delegate_copy;
+@property (nonatomic,retain)UIImage *originImage;
 
 /**
  *  展现

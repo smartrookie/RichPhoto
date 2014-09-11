@@ -30,7 +30,6 @@
         _asyImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
         [self addSubview:_asyImageView];
         
-        
         UITapGestureRecognizer *tapGser = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(disapper)];
         tapGser.numberOfTouchesRequired = 1;
         tapGser.numberOfTapsRequired = 1;
@@ -65,8 +64,14 @@
     UIImage *newImage = nil;
     if (sender.tag == 1000) {
         //MonochromeType
-        newImage = [UIImage processWithImageFilterType:MonochromeType usingImage:self.asyImageView.image];
+        newImage = [UIImage processWithImageFilterType:MonochromeType usingImage:_originImage];
         self.asyImageView.image = newImage;
+        
+    }else if(sender.tag == 1001){
+       //SepiaTone
+        newImage = [UIImage processWithImageFilterType:SepiaToneType usingImage:_originImage];
+        self.asyImageView.image = newImage;
+    
     }
     
 }

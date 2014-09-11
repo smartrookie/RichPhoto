@@ -36,6 +36,7 @@
     [self initMask];
     
     displayDetailImage.asyImageView.image = _beginImage;
+    displayDetailImage.originImage = _beginImage;
     maskview.hidden = NO;
     maskview.alpha = 1.0f;
     [displayDetailImage showOnTheViewWith:_beginImage.size];

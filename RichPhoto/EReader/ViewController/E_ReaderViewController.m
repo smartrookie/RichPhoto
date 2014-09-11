@@ -56,6 +56,15 @@
     _smallFontButton.backgroundColor = [UIColor redColor];
     [_smallFontButton addTarget:self action:@selector(changeSmall) forControlEvents:UIControlEventTouchUpInside];
     
+    UIButton *backBtn = [UIButton buttonWithType:0];
+    [backBtn setTitle:@"返回" forState:0];
+    backBtn.frame = CGRectMake(130, self.view.frame.size.height - 40, 60, 40);
+    [self.view addSubview:backBtn];
+    backBtn.backgroundColor = [UIColor redColor];
+    [backBtn addTarget:self action:@selector(goback) forControlEvents:UIControlEventTouchUpInside];
+
+    
+    
     
 
 }
@@ -83,6 +92,13 @@
     [E_CommonManager saveFontSize:fontSize];
     [self updateFontButtons];
     [_delegate fontSizeChanged:(int)fontSize];
+}
+
+
+#pragma mark - back
+- (void)goback
+{
+    [_delegate goBack];
 }
 
 

@@ -709,7 +709,7 @@
 				GCC_PREFIX_HEADER = "RichPhoto/RichPhoto-Prefix.pch";
 				INFOPLIST_FILE = "RichPhoto/RichPhoto-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "A78983BE-6AA8-4652-B7D2-1E639F97AF56";
+				PROVISIONING_PROFILE = "3502e99d-b74c-4c65-a962-08fad543e609";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -725,7 +725,7 @@
 				GCC_PREFIX_HEADER = "RichPhoto/RichPhoto-Prefix.pch";
 				INFOPLIST_FILE = "RichPhoto/RichPhoto-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "A78983BE-6AA8-4652-B7D2-1E639F97AF56";
+				PROVISIONING_PROFILE = "3502e99d-b74c-4c65-a962-08fad543e609";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

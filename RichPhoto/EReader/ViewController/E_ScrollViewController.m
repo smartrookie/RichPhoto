@@ -110,6 +110,12 @@
     
 }
 
+- (void)goBack
+{
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+
 - (NSUInteger)findOffsetInNewPage:(NSUInteger)offset
 {
     int pageCount = _paginater.pageCount;

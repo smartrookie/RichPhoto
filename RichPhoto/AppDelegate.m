@@ -29,6 +29,7 @@
         [navictrl presentViewController:gesturePassWord animated:NO completion:NULL];
     }
     return YES;
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
