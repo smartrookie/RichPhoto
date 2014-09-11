@@ -22,7 +22,7 @@
 
 @interface LoginAccountsCell : UITableViewCell
 
-@property (assign, nonatomic, getter = isShake) BOOL shake; //抖动开关
+@property (assign, nonatomic, getter = isEditing) BOOL editState; //抖动开关
 
 @end
 
@@ -42,8 +42,6 @@ typedef enum : NSUInteger {
 @property (assign, nonatomic) AccountCellType   cellType;
 @property (strong, nonatomic) UIImageView       *iv_avatar;
 @property (strong, nonatomic) UIButton          *btn_delete;
-
-- (void)startShake;
-- (void)stopShake;
+@property (assign, nonatomic, getter = isDeleteIconHidden) BOOL deleteIconHidden;
 
 @end
