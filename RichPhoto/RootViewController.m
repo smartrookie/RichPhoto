@@ -10,6 +10,7 @@
 #import "LoginViewController.h"
 #import "E_ScrollViewController.h"
 #import "DetailViewController.h"
+#import "RichImageViewController.h"
 
 @interface RootViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -30,6 +31,8 @@
 {
     [super viewDidLoad];
     self.title = @"测试导航";
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] init];
+    [self.navigationItem.backBarButtonItem setTitle:@"返回"];
     
     self.tableview = ({
         UITableView *tableview = [[UITableView alloc] init];
@@ -40,7 +43,7 @@
     [_tableview setFrame:self.view.frame];
     [self.view addSubview:_tableview];
     
-    self.dataArr = @[@"高仿登录",@"EReader",@"手势密码"];
+    self.dataArr = @[@"高仿登录",@"EReader",@"手势密码",@"RichImage"];
 }
 
 #pragma mark - UITableViewDelegate
@@ -83,6 +86,11 @@
         case 2: {   //@"手势密码"
             DetailViewController *detailVc = [[DetailViewController alloc] init];
             [self presentViewController:detailVc animated:YES completion:NULL];
+        }
+            break;
+        case 3: {   //@"RichImage"
+            RichImageViewController *imagevctrl = [[RichImageViewController alloc] init];
+            [self.navigationController pushViewController:imagevctrl animated:YES];
         }
             break;
             

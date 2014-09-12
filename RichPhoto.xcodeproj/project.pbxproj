@@ -35,6 +35,14 @@
 		D2B11E9619B5B5D4004D97FA /* RP_CommonObj.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B11E9519B5B5D4004D97FA /* RP_CommonObj.m */; };
 		D2B11E9919B5B5F1004D97FA /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B11E9819B5B5F1004D97FA /* DetailViewController.m */; };
 		D2B11E9B19B5B696004D97FA /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B11E9A19B5B696004D97FA /* CoreImage.framework */; };
+		E02E878319C34FC500704E72 /* DotContentStyleView.m in Sources */ = {isa = PBXBuildFile; fileRef = E02E877919C34FC500704E72 /* DotContentStyleView.m */; };
+		E02E878419C34FC500704E72 /* DotView.m in Sources */ = {isa = PBXBuildFile; fileRef = E02E877B19C34FC500704E72 /* DotView.m */; };
+		E02E878519C34FC500704E72 /* text_bg_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E02E877D19C34FC500704E72 /* text_bg_left@2x.png */; };
+		E02E878619C34FC500704E72 /* text_bg_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E02E877E19C34FC500704E72 /* text_bg_right@2x.png */; };
+		E02E878719C34FC500704E72 /* RichImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E02E878019C34FC500704E72 /* RichImageView.m */; };
+		E02E878819C34FC500704E72 /* TextInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E02E878219C34FC500704E72 /* TextInputViewController.m */; };
+		E02E878B19C3507E00704E72 /* RichImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E02E878A19C3507E00704E72 /* RichImageViewController.m */; };
+		E02E878D19C3518A00704E72 /* girl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E02E878C19C3518A00704E72 /* girl.jpg */; };
 		E080CC6A1984EA5800DD8CEE /* login_btn_blue_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E080CC681984EA5800DD8CEE /* login_btn_blue_nor@2x.png */; };
 		E080CC6B1984EA5800DD8CEE /* login_btn_blue_press@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E080CC691984EA5800DD8CEE /* login_btn_blue_press@2x.png */; };
 		E080CC6F1984EEA300DD8CEE /* UIImage+ResizableImage.m in Sources */ = {isa = PBXBuildFile; fileRef = E080CC6E1984EEA300DD8CEE /* UIImage+ResizableImage.m */; };
@@ -120,6 +128,19 @@
 		D2B11E9719B5B5F1004D97FA /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		D2B11E9819B5B5F1004D97FA /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		D2B11E9A19B5B696004D97FA /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		E02E877819C34FC500704E72 /* DotContentStyleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DotContentStyleView.h; sourceTree = "<group>"; };
+		E02E877919C34FC500704E72 /* DotContentStyleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DotContentStyleView.m; sourceTree = "<group>"; };
+		E02E877A19C34FC500704E72 /* DotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DotView.h; sourceTree = "<group>"; };
+		E02E877B19C34FC500704E72 /* DotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DotView.m; sourceTree = "<group>"; };
+		E02E877D19C34FC500704E72 /* text_bg_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text_bg_left@2x.png"; sourceTree = "<group>"; };
+		E02E877E19C34FC500704E72 /* text_bg_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text_bg_right@2x.png"; sourceTree = "<group>"; };
+		E02E877F19C34FC500704E72 /* RichImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RichImageView.h; sourceTree = "<group>"; };
+		E02E878019C34FC500704E72 /* RichImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RichImageView.m; sourceTree = "<group>"; };
+		E02E878119C34FC500704E72 /* TextInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextInputViewController.h; sourceTree = "<group>"; };
+		E02E878219C34FC500704E72 /* TextInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextInputViewController.m; sourceTree = "<group>"; };
+		E02E878919C3507E00704E72 /* RichImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RichImageViewController.h; sourceTree = "<group>"; };
+		E02E878A19C3507E00704E72 /* RichImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RichImageViewController.m; sourceTree = "<group>"; };
+		E02E878C19C3518A00704E72 /* girl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = girl.jpg; sourceTree = "<group>"; };
 		E080CC681984EA5800DD8CEE /* login_btn_blue_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_btn_blue_nor@2x.png"; sourceTree = "<group>"; };
 		E080CC691984EA5800DD8CEE /* login_btn_blue_press@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_btn_blue_press@2x.png"; sourceTree = "<group>"; };
 		E080CC6D1984EEA300DD8CEE /* UIImage+ResizableImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ResizableImage.h"; sourceTree = "<group>"; };
@@ -282,6 +303,34 @@
 			path = KeychainItemWrapper;
 			sourceTree = "<group>";
 		};
+		E02E877719C34FC500704E72 /* RichImage */ = {
+			isa = PBXGroup;
+			children = (
+				E02E877C19C34FC500704E72 /* images */,
+				E02E877819C34FC500704E72 /* DotContentStyleView.h */,
+				E02E877919C34FC500704E72 /* DotContentStyleView.m */,
+				E02E877A19C34FC500704E72 /* DotView.h */,
+				E02E877B19C34FC500704E72 /* DotView.m */,
+				E02E877F19C34FC500704E72 /* RichImageView.h */,
+				E02E878019C34FC500704E72 /* RichImageView.m */,
+				E02E878119C34FC500704E72 /* TextInputViewController.h */,
+				E02E878219C34FC500704E72 /* TextInputViewController.m */,
+				E02E878919C3507E00704E72 /* RichImageViewController.h */,
+				E02E878A19C3507E00704E72 /* RichImageViewController.m */,
+			);
+			path = RichImage;
+			sourceTree = "<group>";
+		};
+		E02E877C19C34FC500704E72 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				E02E878C19C3518A00704E72 /* girl.jpg */,
+				E02E877D19C34FC500704E72 /* text_bg_left@2x.png */,
+				E02E877E19C34FC500704E72 /* text_bg_right@2x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		E080CC671984EA4300DD8CEE /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,6 +391,7 @@
 		E0EE20A01983A57500D930E5 /* RichPhoto */ = {
 			isa = PBXGroup;
 			children = (
+				E02E877719C34FC500704E72 /* RichImage */,
 				D2B11E8319B5B5AB004D97FA /* GesturePassword */,
 				D2B11E7F19B5B590004D97FA /* ThirdPart */,
 				529FC9CD199B6CCC003B72EF /* EReader */,
@@ -491,8 +541,10 @@
 				E080CC6A1984EA5800DD8CEE /* login_btn_blue_nor@2x.png in Resources */,
 				E080CC731985224200DD8CEE /* line@2x.png in Resources */,
 				52864BA119B47BEE003D06DC /* login_account_clear@2x.png in Resources */,
+				E02E878619C34FC500704E72 /* text_bg_right@2x.png in Resources */,
 				529FC9EB199B6CCC003B72EF /* Chapter1.txt in Resources */,
 				529FC9EE199B6CCC003B72EF /* Chapter4.txt in Resources */,
+				E02E878D19C3518A00704E72 /* girl.jpg in Resources */,
 				529FC9F0199B6CCC003B72EF /* Chapter6.txt in Resources */,
 				E0EE20A51983A57500D930E5 /* InfoPlist.strings in Resources */,
 				529FC9C9199B5E28003B72EF /* Localizable.strings in Resources */,
@@ -502,6 +554,7 @@
 				E080CC6B1984EA5800DD8CEE /* login_btn_blue_press@2x.png in Resources */,
 				E080CC75198524D500DD8CEE /* login_textfield_more@2x.png in Resources */,
 				529FC9EC199B6CCC003B72EF /* Chapter2.txt in Resources */,
+				E02E878519C34FC500704E72 /* text_bg_left@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,8 +618,11 @@
 				D2B11E9319B5B5AB004D97FA /* TentacleView.m in Sources */,
 				D2B11E9219B5B5AB004D97FA /* KeychainItemWrapper.m in Sources */,
 				D2B11E9619B5B5D4004D97FA /* RP_CommonObj.m in Sources */,
+				E02E878B19C3507E00704E72 /* RichImageViewController.m in Sources */,
+				E02E878419C34FC500704E72 /* DotView.m in Sources */,
 				529FC9F4199B6CCC003B72EF /* E_ScrollViewController.m in Sources */,
 				D2B11E8219B5B590004D97FA /* Reachability.m in Sources */,
+				E02E878319C34FC500704E72 /* DotContentStyleView.m in Sources */,
 				529FC9E7199B6CCC003B72EF /* E_CommonManager.m in Sources */,
 				E080CC6F1984EEA300DD8CEE /* UIImage+ResizableImage.m in Sources */,
 				D2B11E9019B5B5AB004D97FA /* GesturePasswordController.m in Sources */,
@@ -575,6 +631,8 @@
 				529FC9F2199B6CCC003B72EF /* E_ReaderView.m in Sources */,
 				E0EE20D61984DB6D00D930E5 /* LoginViewController.m in Sources */,
 				D2B11E9919B5B5F1004D97FA /* DetailViewController.m in Sources */,
+				E02E878719C34FC500704E72 /* RichImageView.m in Sources */,
+				E02E878819C34FC500704E72 /* TextInputViewController.m in Sources */,
 				D281F07C19B5BEE0006CF677 /* DisplayView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
