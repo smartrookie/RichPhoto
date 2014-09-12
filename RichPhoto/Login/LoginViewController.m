@@ -240,7 +240,7 @@
     }
     [self.tf_account setTextColor:[UIColor grayColor]];
     [self.tf_password setTextColor:[UIColor grayColor]];
-    [self.tb_loginAccounts setShake:NO];
+    [self.tb_loginAccounts setEditState:NO];
 }
 
 - (void)closeAnimation
@@ -255,7 +255,7 @@
     }
     [self.tf_account setTextColor:[UIColor blackColor]];
     [self.tf_password setTextColor:[UIColor blackColor]];
-    [self.tb_loginAccounts setShake:NO];
+    [self.tb_loginAccounts setEditState:NO];
 }
 
 #pragma mark -
@@ -325,6 +325,12 @@
     return self;
 }
 
+- (void)setEditState:(BOOL)editState
+{
+    _editState = editState;
+    [self.tableview reloadData];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [_accountArr count];
@@ -350,11 +356,8 @@
         UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressFunc4shakeAnimation:)];
         [cell.iv_avatar addGestureRecognizer:longPress];
     }
-    if ([self isShake]) {
-        [cell startShake];
-    } else {
-        [cell stopShake];
-    }
+    
+    [cell setDeleteIconHidden:![self isEditing]];
     
     if ([_accountArr count] == 1) {
         cell.cellType = AccountCellType_One;
@@ -369,8 +372,8 @@
 
 - (void)longPressFunc4shakeAnimation:(UILongPressGestureRecognizer *)gesture
 {
-    if (![self isShake]) {
-        [self setShake:YES];
+    if (![self isEditing]) {
+        [self setEditState:YES];
         [_tableview reloadData];
     }
 }
@@ -433,50 +436,13 @@
             break;
     }
 }
-- (void)startShake
-{
-//    srand([[NSDate date] timeIntervalSince1970]);
-//    float rand=(float)random();
-//    CFTimeInterval t=rand*0.0000000001;
-//    [UIView animateWithDuration:0.1 delay:t options:0  animations:^
-//     {
-//         _iv_avatar.transform=CGAffineTransformMakeRotation(-0.05);
-//     } completion:^(BOOL finished)
-//     {
-//         [UIView animateWithDuration:0.1 delay:0 options:UIViewAnimationOptionRepeat|UIViewAnimationOptionAutoreverse|UIViewAnimationOptionAllowUserInteraction  animations:^
-//          {
-//              _iv_avatar.transform=CGAffineTransformMakeRotation(0.05);
-//          } completion:^(BOOL finished) {}];
-//     }];
-    float rand=(float)random();
-    CFTimeInterval t=rand*0.0000000001;
-    [self performSelector:@selector(addShakeAnimation) withObject:nil afterDelay:t];
-}
 
-- (void)addShakeAnimation
+- (void)setDeleteIconHidden:(BOOL)deleteIconHidden
 {
-    static NSString *animationKey = @"rotationAnimation";
-    CAAnimation *animation = [_iv_avatar.layer animationForKey:animationKey];
-    if (animation) {
-        NSLog(@"搜到保存动画");
-    }
-    if (![_iv_avatar.layer animationForKey:animationKey]) {
-        CABasicAnimation* rotationAnimation;
-        rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
-        rotationAnimation.toValue = [NSNumber numberWithFloat:0.1f];
-        rotationAnimation.duration = 0.08f;
-        rotationAnimation.cumulative = NO;
-        rotationAnimation.repeatCount = MAXFLOAT;
-        rotationAnimation.autoreverses = YES;
-        [_iv_avatar.layer addAnimation:rotationAnimation forKey:animationKey];
-    }
-}
-
-- (void)stopShake
-{
-    if ([_iv_avatar.layer animationForKey:@"rotationAnimation"]) {
-        [_iv_avatar.layer removeAnimationForKey:@"rotationAnimation"];
-    }
+    _deleteIconHidden = deleteIconHidden;
+    [UIView animateWithDuration:0.3f animations:^{
+        [_btn_delete setHidden:deleteIconHidden];
+    }];
 }
 
 @end
