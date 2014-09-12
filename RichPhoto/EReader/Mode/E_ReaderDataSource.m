@@ -44,7 +44,8 @@
 
 - (E_EveryChapter *)nextChapter
 {
-    if (_currentChapterIndex > _totalChapter) {
+
+    if (_currentChapterIndex >= _totalChapter) {
         
         return nil;
         
