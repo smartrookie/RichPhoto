@@ -7,6 +7,8 @@
 //
 
 #import "DisplayView.h"
+#import "ILReplyView.h"
+
 
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)   // 得到屏幕高
 #define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)     // 得到屏幕宽
@@ -36,7 +38,7 @@
         [self addGestureRecognizer:tapGser];
       
         
-        UITapGestureRecognizer *doubleTapGser = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changeBig)];
+        UITapGestureRecognizer *doubleTapGser = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changeBig:)];
         doubleTapGser.numberOfTapsRequired = 2;
         [self addGestureRecognizer:doubleTapGser];
         [tapGser requireGestureRecognizerToFail:doubleTapGser];
@@ -77,11 +79,15 @@
 }
 
 #pragma mark - 双击放大到最大－－3.0
-- (void)changeBig
+- (void)changeBig:(UITapGestureRecognizer *)gesture
 {
     if (!is_big) {
         
-        [self setZoomScale:self.maximumZoomScale animated:YES];
+        CGFloat newscale = 1.9;
+        CGRect zoomRect = [self zoomRectForScale:newscale withCenter:[gesture locationInView:gesture.view]];
+    
+        [self zoomToRect:zoomRect animated:YES];
+        
         is_big = YES;
         
     }else{
@@ -91,7 +97,20 @@
     }
 }
 
+#pragma mark - 定点放大
+- (CGRect)zoomRectForScale:(CGFloat )newscale withCenter:(CGPoint )center{
+    
+    CGRect zoomRect = CGRectZero;
+    
+    zoomRect.size.height = self.frame.size.height / newscale;
+    zoomRect.size.width  = self.frame.size.width  / newscale;
+    zoomRect.origin.x    = center.x - (zoomRect.size.width  / 2.0);
+    zoomRect.origin.y    = center.y - (zoomRect.size.height / 2.0);
+    
+    return zoomRect;
 
+
+}
 
 #pragma mark-- 展现
 - (void)showOnTheViewWith:(CGSize)displayViewSize

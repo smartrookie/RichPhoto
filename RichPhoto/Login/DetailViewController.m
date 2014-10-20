@@ -10,10 +10,19 @@
 #import "GesturePasswordController.h"
 #import "UIImage+ResizableImage.h"
 #import "ImageFilterViewController.h"
+#import "ILReplyView.h"
 
-@interface DetailViewController ()<GesturePasswordVcDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate,ImageFilterDelegate>
+#define DEFAULTMAX 10000
+#define kFromUserName @"大师兄"
+
+#define kToUserName @""
+
+#define kContentText @"头像好帅啊，是你自己吗？"
+
+@interface DetailViewController ()<GesturePasswordVcDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate,ImageFilterDelegate,ILReplyDelegate>
 {
     UIImagePickerController *_libraryPicker;
+    NSString  *msg;
 
 }
 @property (strong, nonatomic) UIButton      *btn_setting;
@@ -126,6 +135,135 @@
     changeAvatar.layer.cornerRadius = 5;
     [self.view addSubview:changeAvatar];
     
+    [self configILReplyView];
+    
+}
+
+#pragma mark - ilreplyView
+- (void)configILReplyView{
+
+//**************************************第1个****************************************
+    ILReplyView *replyView = [[ILReplyView alloc] initWithFrame:CGRectMake(10, 150, self.view.frame.size.width - 20, DEFAULTMAX)];
+    replyView.tag = 90000;
+    replyView.delegate = self;
+    
+    
+    __weak typeof(self) weakSelf = self;
+    
+    [replyView fitFromUserName:kFromUserName
+     
+                       byClick:^(NSString *fromName) {
+                           
+                           msg = [NSString stringWithFormat:@"点击%@",fromName];
+                           [weakSelf showAlertView];
+                           
+                       }
+                 withLongPress:^(NSString *fromName){
+                     
+                           msg = [NSString stringWithFormat:@"长按%@",fromName];
+                          [weakSelf showAlertView];
+                 }];
+    
+    [replyView fitToUserName:kToUserName
+     
+                     byClick:^(NSString *toName) {
+                         
+                         msg = [NSString stringWithFormat:@"点击%@",toName];
+                         [weakSelf showAlertView];
+                         
+                     }
+               withLongPress:^(NSString *toName){
+                   
+                        msg = [NSString stringWithFormat:@"长按%@",toName];
+                        [weakSelf showAlertView];
+                   
+               }];
+    
+    replyView.contentText = kContentText;
+    
+    [self.view addSubview:replyView];
+    
+    //调整高度
+    replyView.frame = CGRectMake(10, 150, self.view.frame.size.width - 20, replyView.cellHeight);
+    
+    
+    
+//**************************************第2个****************************************
+    ILReplyView *replyView_ = [[ILReplyView alloc] initWithFrame:CGRectMake(10, 150 + replyView.cellHeight + 20, self.view.frame.size.width - 20, DEFAULTMAX)];
+    replyView_.tag = 90001;
+    replyView_.delegate = self;
+    
+    [replyView_ fitFromUserName:@"阿虎"
+     
+                        byClick:^(NSString *fromName) {
+                            
+                            msg = [NSString stringWithFormat:@"点击%@",fromName];
+                            [weakSelf showAlertView];
+                            
+                        }
+                  withLongPress:^(NSString *fromName){
+                      
+                            msg = [NSString stringWithFormat:@"长按%@",fromName];
+                            [weakSelf showAlertView];
+                  }];
+    
+    [replyView_ fitToUserName:@"大师兄"
+     
+                      byClick:^(NSString *toName) {
+                          
+                          msg = [NSString stringWithFormat:@"点击%@",toName];
+                          [weakSelf showAlertView];
+                          
+                      }
+                withLongPress:^(NSString *toName){
+                    
+                          msg = [NSString stringWithFormat:@"长按%@",toName];
+                          [weakSelf showAlertView];
+                    
+                }];
+    
+    replyView_.contentText = @"咋啦，要来一发吗？";
+    
+    [self.view addSubview:replyView_];
+    
+    //调整高度
+    replyView_.frame = CGRectMake(10, 150 + replyView.cellHeight + 10, self.view.frame.size.width - 20, replyView_.cellHeight);
+//**********************************************************
+
+
+}
+
+
+
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+#warning todo - 可以后按需求扩展
+    [(ILReplyView *)[self.view viewWithTag:90000] removeSelectedView];
+    [(ILReplyView *)[self.view viewWithTag:90001] removeSelectedView];
+    
+}
+
+#pragma mark --
+- (void)clickMySelf{
+    
+    NSLog(@"click all");
+    msg = @"点击背景";
+    [self showAlertView];
+    
+}
+
+- (void)longClickMySelf{
+    
+    NSLog(@"复制");
+    msg = @"长按背景";
+    [self showAlertView];
+    
+}
+
+- (void)showAlertView{
+
+    UIAlertView *al = [[UIAlertView alloc] initWithTitle:msg message:nil delegate:nil cancelButtonTitle:@"好的" otherButtonTitles:nil, nil];
+    [al show];
+
 }
 
 #pragma mark - setting
@@ -196,7 +334,7 @@
 #pragma mark - actionsheetDelegate
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    DLog(@"buttonIndex = %d",buttonIndex);
+   // DLog(@"buttonIndex = %d",buttonIndex);
     if (buttonIndex == 0) {
         if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
         {

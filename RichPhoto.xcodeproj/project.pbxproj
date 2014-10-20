@@ -24,6 +24,8 @@
 		529FC9F3199B6CCC003B72EF /* E_ReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529FC9E4199B6CCC003B72EF /* E_ReaderViewController.m */; };
 		529FC9F4199B6CCC003B72EF /* E_ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529FC9E6199B6CCC003B72EF /* E_ScrollViewController.m */; };
 		B13200E5E1C346FD864E20AF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DCD2B9222F14BB2BD7BF086 /* libPods.a */; };
+		D26C2D4319F4F9A00020628D /* ILReplyTextStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = D26C2D4019F4F9A00020628D /* ILReplyTextStyle.m */; };
+		D26C2D4419F4F9A00020628D /* ILReplyView.m in Sources */ = {isa = PBXBuildFile; fileRef = D26C2D4219F4F9A00020628D /* ILReplyView.m */; };
 		D281F07319B5BCAB006CF677 /* ImageFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D281F07219B5BCAB006CF677 /* ImageFilterViewController.m */; };
 		D281F07C19B5BEE0006CF677 /* DisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = D281F07B19B5BEE0006CF677 /* DisplayView.m */; };
 		D2B11E8219B5B590004D97FA /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B11E8119B5B590004D97FA /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -107,6 +109,10 @@
 		529FC9E5199B6CCC003B72EF /* E_ScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = E_ScrollViewController.h; sourceTree = "<group>"; };
 		529FC9E6199B6CCC003B72EF /* E_ScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = E_ScrollViewController.m; sourceTree = "<group>"; };
 		8DCD2B9222F14BB2BD7BF086 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D26C2D3F19F4F9A00020628D /* ILReplyTextStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILReplyTextStyle.h; sourceTree = "<group>"; };
+		D26C2D4019F4F9A00020628D /* ILReplyTextStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILReplyTextStyle.m; sourceTree = "<group>"; };
+		D26C2D4119F4F9A00020628D /* ILReplyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILReplyView.h; sourceTree = "<group>"; };
+		D26C2D4219F4F9A00020628D /* ILReplyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILReplyView.m; sourceTree = "<group>"; };
 		D281F07119B5BCAB006CF677 /* ImageFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageFilterViewController.h; sourceTree = "<group>"; };
 		D281F07219B5BCAB006CF677 /* ImageFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageFilterViewController.m; sourceTree = "<group>"; };
 		D281F07A19B5BEE0006CF677 /* DisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayView.h; sourceTree = "<group>"; };
@@ -265,6 +271,10 @@
 			children = (
 				D281F07A19B5BEE0006CF677 /* DisplayView.h */,
 				D281F07B19B5BEE0006CF677 /* DisplayView.m */,
+				D26C2D3F19F4F9A00020628D /* ILReplyTextStyle.h */,
+				D26C2D4019F4F9A00020628D /* ILReplyTextStyle.m */,
+				D26C2D4119F4F9A00020628D /* ILReplyView.h */,
+				D26C2D4219F4F9A00020628D /* ILReplyView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -618,6 +628,8 @@
 				D2B11E9319B5B5AB004D97FA /* TentacleView.m in Sources */,
 				D2B11E9219B5B5AB004D97FA /* KeychainItemWrapper.m in Sources */,
 				D2B11E9619B5B5D4004D97FA /* RP_CommonObj.m in Sources */,
+				D26C2D4419F4F9A00020628D /* ILReplyView.m in Sources */,
+				D26C2D4319F4F9A00020628D /* ILReplyTextStyle.m in Sources */,
 				E02E878B19C3507E00704E72 /* RichImageViewController.m in Sources */,
 				E02E878419C34FC500704E72 /* DotView.m in Sources */,
 				529FC9F4199B6CCC003B72EF /* E_ScrollViewController.m in Sources */,
