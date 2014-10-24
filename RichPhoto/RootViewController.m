@@ -11,6 +11,7 @@
 #import "E_ScrollViewController.h"
 #import "DetailViewController.h"
 #import "RichImageViewController.h"
+#import "YMViewController.h"
 
 @interface RootViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -43,7 +44,7 @@
     [_tableview setFrame:self.view.frame];
     [self.view addSubview:_tableview];
     
-    self.dataArr = @[@"高仿登录",@"EReader",@"手势密码",@"RichImage"];
+    self.dataArr = @[@"高仿登录",@"EReader",@"手势密码",@"RichImage",@"富文本"];
 }
 
 #pragma mark - UITableViewDelegate
@@ -93,7 +94,12 @@
             [self.navigationController pushViewController:imagevctrl animated:YES];
         }
             break;
-            
+        case 4:{
+            YMViewController *ymVc = [[YMViewController alloc] init];
+            [self.navigationController pushViewController:ymVc animated:YES];
+        
+        }
+            break;
         default:
             break;
     }

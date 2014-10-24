@@ -7,7 +7,7 @@
 //
 
 #import "DisplayView.h"
-#import "ILReplyView.h"
+
 
 
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)   // 得到屏幕高
