@@ -21,13 +21,13 @@
 
 #define EmotionItemPattern          @"\\[em:(\\d+):\\]"
 #define PlaceHolder @" "
-#define kSelectedTag 4567
+
 #define AttributedImageNameKey      @"ImageName"
 
 
 #define kSelf_SelectedColor [UIColor colorWithWhite:0 alpha:0.4] //点击背景  颜色
 #define kUserName_SelectedColor [UIColor colorWithWhite:0 alpha:0.25]//点击姓名颜色
-#define kUserName_unSelectedColor [UIColor colorWithWhite:0 alpha:0]//取消点击姓名颜色
+
 
 @implementation YMTextView
 {
@@ -46,8 +46,6 @@
     
     NSMutableArray *_selectionsViews;//存点击url或者电话号码的背景的view的数组
     
-    CGFloat _cellHeight;
-   
 
 }
 
@@ -232,7 +230,7 @@
 - (CGFloat)getSuggestedHeight{
     
     CGSize suggestedSize = [self suggestedSizeConstrainedToSize:CGSizeMake(CGRectGetWidth(self.frame), MAXFLOAT)];
-    _cellHeight = suggestedSize.height;
+    
     return suggestedSize.height;
     
 }
@@ -361,42 +359,7 @@ CGFloat RunDelegateGetWidthCallback(void *refCon){
     return 15;
 }
 
-- (CGRect)getLineRectFromNSRange:(NSRange)range
-{
-    CGMutablePathRef mainPath = CGPathCreateMutable();
- 
-    CGPathAddRect(mainPath, NULL, CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height));
-  
- 
-    
-    CTFrameRef ctframe = CTFramesetterCreateFrame(_framesetter, CFRangeMake(0, 0), mainPath, NULL);
-    CGPathRelease(mainPath);
-    
-    NSArray *lines = (__bridge NSArray *)CTFrameGetLines(ctframe);
-    NSInteger lineCount = [lines count];
-    CGPoint origins[lineCount];
-    if (lineCount != 0)
-    {
-        for (int i = 0; i < lineCount; i++)
-        {
-            CTLineRef line = (__bridge CTLineRef)[lines objectAtIndex:i];
-            CFRange lineRange= CTLineGetStringRange(line);
-            if (range.location >= lineRange.location && (range.location + range.length)<= lineRange.location+lineRange.length)
-            {
-                CTFrameGetLineOrigins(ctframe, CFRangeMake(0, 0), origins);
-                CGPoint origin = origins[i];
-                CGFloat ascent,descent,leading;
-                CGFloat lineWidth = CTLineGetTypographicBounds(line, &ascent, &descent, &leading);
-                origin.y = self.frame.size.height-(origin.y);
-                CFRelease(ctframe);
-                CGRect lineRect = CGRectMake(origin.x, origin.y+descent-(ascent+descent+1), lineWidth, ascent+descent+1);
-                return lineRect;
-            }
-        }
-    }
-    CFRelease(ctframe);
-    return CGRectMake(-1, -1, -1, -1);
-}
+
 
 #pragma mark -点击自己
 - (void)tapMyself:(UITapGestureRecognizer *)gesture{
